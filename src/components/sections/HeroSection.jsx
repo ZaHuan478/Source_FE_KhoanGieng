@@ -15,7 +15,7 @@ function HeroSection() {
             Uy Tín Hàng Đầu Phú Yên
           </span>
           <h1 className="mt-4 font-display text-[42px] font-bold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
-            Khoan Giếng Phú Yên Chuyên Nghiệp
+            Khoan Giếng Máy Đập Hơi
           </h1>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">
             Nhanh chóng - Giá rẻ - Uy tín. Mang nguồn nước sạch bền vững tới mọi

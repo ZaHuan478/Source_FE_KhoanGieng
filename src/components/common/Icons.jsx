@@ -58,3 +58,11 @@ export function ChatIcon() {
     </svg>
   )
 }
+
+export function LocationPinIcon() {
+  return (
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.5a7 7 0 0 0-7 7c0 5.15 7 12 7 12s7-6.85 7-12a7 7 0 0 0-7-7Zm0 10.1a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2Z" />
+    </svg>
+  )
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import FooterSection from '../components/sections/FooterSection'
 import Header from '../components/sections/Header'
-import { footerServices, navItems, pricingAddons, pricingPlans } from '../data/siteContent'
+import { footerServices, navItems, pricingPlans } from '../data/siteContent'
 
 function PricingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -117,39 +117,6 @@ function PricingPage() {
                   >
                     {plan.cta}
                   </button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto w-full max-w-[1280px] px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_2fr]">
-            <div>
-              <h3 className="font-display text-4xl font-bold text-[#083b88]">Phụ Kiện & Bảo Trì</h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Chúng tôi cung cấp các loại máy bơm chính hãng và dịch vụ sửa chữa giếng chuyên nghiệp.
-              </p>
-              <div className="mt-6 rounded-2xl bg-[#e6eaf5] p-5">
-                <p className="text-sm font-semibold text-[#083b88]">Lưu ý quan trọng</p>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                  Giá thực tế có thể thay đổi tùy thuộc vào địa chất (đất sỏi, đá, cát...), vị trí thi công.
-                  Vui lòng liên hệ để có báo giá chính xác nhất.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {pricingAddons.map((item) => (
-                <article key={item.name} className="rounded-2xl bg-[#eef1f8] p-5">
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-white p-2 text-[#083b88]">{item.icon}</div>
-                    <div>
-                      <h4 className="font-display text-xl font-bold text-slate-900">{item.name}</h4>
-                      <p className="mt-1 text-xs text-slate-500">{item.note}</p>
-                      <p className="mt-3 text-3xl font-bold text-[#7a5124]">{item.price}</p>
-                    </div>
-                  </div>
                 </article>
               ))}
             </div>
