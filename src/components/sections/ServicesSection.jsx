@@ -5,10 +5,16 @@ function ServicesSection() {
     <section id="dich-vu" className="bg-white py-14">
       <div className="mx-auto w-full max-w-300 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <SectionTitle
-            align="center"
-            title="Khoan Giếng Phú Yên"
-          />
+          <div className="flex items-center justify-center">
+            <div className="h-px flex-1 bg-slate-300"></div>
+            <div className="px-4 sm:px-6">
+              <SectionTitle
+                align="center"
+                title="Khoan Giếng Phú Yên"
+              />
+            </div>
+            <div className="h-px flex-1 bg-slate-300"></div>
+          </div>
 
           <div className="mx-auto mt-5 max-w-3xl space-y-4 text-left text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg">
             <p>

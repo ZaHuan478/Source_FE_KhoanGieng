@@ -32,11 +32,11 @@ function HomePage() {
       <HeroSection />
       <ServicesSection services={services} />
       <HomeFeatureGridSection />
-      <div className="w-full bg-white">
+      {/* <div className="w-full bg-white">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="h-px w-full bg-slate-300/80" />
         </div>
-      </div>
+      </div> */}
       <WhyChooseUsSection whyPoints={whyPoints} />
       <CtaBannerSection />
       <ContactSection />
