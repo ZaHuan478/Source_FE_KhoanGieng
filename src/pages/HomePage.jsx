@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import ContactSection from '../components/sections/ContactSection'
 import CtaBannerSection from '../components/sections/CtaBannerSection'
-import FloatingActions from '../components/sections/FloatingActions'
 import FooterSection from '../components/sections/FooterSection'
 import Header from '../components/sections/Header'
 import HeroSection from '../components/sections/HeroSection'
@@ -12,7 +11,6 @@ import {
   navItems,
   services,
   whyPoints,
-  whyStats,
 } from '../data/siteContent'
 
 function HomePage() {
@@ -31,9 +29,13 @@ function HomePage() {
     <div className="bg-slate-100 text-slate-900">
       <Header scrolled={scrolled} navItems={navItems} />
       <HeroSection />
-      <FloatingActions />
       <ServicesSection services={services} />
-      <WhyChooseUsSection whyStats={whyStats} whyPoints={whyPoints} />
+      <div className="w-full bg-white">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="h-px w-full bg-slate-300/80" />
+        </div>
+      </div>
+      <WhyChooseUsSection whyPoints={whyPoints} />
       <CtaBannerSection />
       <ContactSection />
       <FooterSection footerServices={footerServices} />

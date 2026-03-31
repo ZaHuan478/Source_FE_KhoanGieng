@@ -2,25 +2,20 @@ import heroBackground from '../../assets/1667552228_may-khoan-gieng-thuy-luc-4.j
 
 function HeroSection() {
   return (
-    <section id="trang-chu" className="relative min-h-[100svh] overflow-hidden">
+    <section id="trang-chu" className="relative min-h-svh overflow-hidden">
       <img
         src={heroBackground}
         alt="Giàn khoan giếng tại Phú Yên"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#073a83]/95 via-[#0b4ea7]/70 to-[#0b4ea7]/0" />
-      <div className="relative mx-auto flex min-h-[100svh] w-full max-w-[1200px] items-center px-4 pb-16 pt-24 sm:px-6 lg:px-8">
-        <div className="max-w-xl animate-[fadeInUp_700ms_ease-out]">
+      <div className="relative mx-auto flex min-h-svh w-full max-w-300 items-center px-4 pb-16 pt-24 sm:px-6 lg:px-8">
+        <div className="max-w-xl animate-[fadeInUp_700ms_ease-out] text-shadow-[0_3px_14px_rgba(0,0,0,0.7)]">
           <span className="inline-flex rounded-full border border-amber-200 bg-amber-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700">
             Uy Tín Hàng Đầu Phú Yên
           </span>
           <h1 className="mt-4 font-display text-[42px] font-bold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
             Khoan Giếng Máy Đập Hơi
           </h1>
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-blue-100 sm:text-base">
-            Nhanh chóng - Giá rẻ - Uy tín. Mang nguồn nước sạch bền vững tới mọi
-            công trình và hộ gia đình.
-          </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#lien-he"

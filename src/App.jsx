@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import FloatingActions from './components/sections/FloatingActions'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
@@ -7,13 +8,16 @@ import ServicesPage from './pages/ServicesPage'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/gioi-thieu" element={<AboutPage />} />
-      <Route path="/dich-vu" element={<ServicesPage />} />
-      <Route path="/bang-gia" element={<PricingPage />} />
-      <Route path="/lien-he" element={<ContactPage />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/gioi-thieu" element={<AboutPage />} />
+        <Route path="/dich-vu" element={<ServicesPage />} />
+        <Route path="/bang-gia" element={<PricingPage />} />
+        <Route path="/lien-he" element={<ContactPage />} />
+      </Routes>
+      <FloatingActions />
+    </>
   )
 }
 

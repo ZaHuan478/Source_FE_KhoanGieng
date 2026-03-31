@@ -33,13 +33,9 @@ export const services = [
   },
 ]
 
-export const whyStats = [
-  { value: '24/7', label: 'Đội ngũ kinh nghiệm' },
-  { value: '5 bước', label: 'Thiết bị hiện đại' },
-]
 
 export const whyPoints = [
-  'Chúng tôi không chỉ khoan giếng, chúng tôi kiến tạo giải pháp nước sạch bền vững cho mọi công trình gia đình và doanh nghiệp tại địa phương.',
+  'Với nhiều năm kinh nghiệm trong lĩnh vực khoan giếng, Khoan Giếng Phú Yên mang đến giải pháp cung cấp nguồn nước sạch ổn định và bền vững. Đội ngũ kỹ thuật chuyên nghiệp cùng hệ thống máy móc hiện đại giúp quá trình thi công diễn ra nhanh chóng, an toàn và hiệu quả. Ngoài ra, khách hàng còn được tư vấn kỹ thuật, thiết kế hệ thống và hỗ trợ bảo trì, đảm bảo giếng nước luôn hoạt động tốt và lâu dài.',
 ]
 
 export const projects = [
