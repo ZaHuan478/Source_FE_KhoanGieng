@@ -1,29 +1,22 @@
 function FooterSection({ footerServices }) {
   return (
-    <footer className="border-t border-slate-200 bg-[#eceff6] text-slate-700">
+    <footer className="border-t border-slate-200 bg-white text-slate-700">
       <div className="mx-auto grid w-full max-w-[1200px] gap-7 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <h4 className="font-display text-xl font-bold text-[#083b88]">Khoan Giếng Phú Yên</h4>
-          <p className="mt-3 text-xs text-slate-600">
-            Chuyên gia hàng đầu về khoan giếng và xử lý nguồn nước tại Phú Yên. Chúng tôi cam kết
-            dịch vụ minh bạch, lộ trình triển khai chi tiết.
-          </p>
+          <h4 className="font-display text-xl font-bold text-[#083b88]">Liên Hệ</h4>
+          <div className="mt-4 space-y-2.5 text-sm text-slate-700">
+            <p className="text-base font-bold text-slate-800 uppercase">Công ty TNHH Trường Giang</p>
+            <p><strong>Địa chỉ:</strong> Số 165 Hùng Vương, Phường Tuy Hòa, Tỉnh Đắk Lắk, Việt Nam</p>
+            <p><strong>Hotline:</strong> 0945455458</p>
+            <p><strong>Email:</strong> huan1234@gmail.com</p>
+          </div>
         </div>
-        <div>
-          <h5 className="text-xs font-semibold uppercase tracking-wide text-slate-500">Dịch vụ chính</h5>
-          <ul className="mt-3 space-y-2 text-xs text-slate-600">
+        <div className="lg:ml-20">
+          <h5 className="text-base font-semibold uppercase tracking-wide font-bold text-[#083b88]">Dịch vụ chính</h5>
+          <ul className="mt-4 space-y-3 text-sm text-slate-700">
             {footerServices.map((service) => (
-              <li key={service}>{service}</li>
+              <li key={service} className="hover:text-[#083b88] transition-colors cursor-pointer">{service}</li>
             ))}
-          </ul>
-        </div>
-        <div>
-          <h5 className="text-xs font-semibold uppercase tracking-wide text-slate-500">Hỗ trợ khách hàng</h5>
-          <ul className="mt-3 space-y-2 text-xs text-slate-600">
-            <li>Chính sách bảo mật</li>
-            <li>Điều khoản dịch vụ</li>
-            <li>Hỗ trợ kỹ thuật</li>
-            <li>Email: lienhe@phuyendrilling.vn</li>
           </ul>
         </div>
       </div>

@@ -18,13 +18,13 @@ function ServicesSection() {
 
           <div className="mx-auto mt-5 max-w-3xl space-y-4 text-left text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg">
             <p>
-              Dịch vụ khoan giếng tại Phú Yên là giải pháp tối ưu cho nhu cầu cung cấp nguồn nước sạch, ổn định và lâu dài. Với hơn 15 năm kinh nghiệm trong lĩnh vực khoan giếng, đội ngũ tại đây đã khẳng định được uy tín và chất lượng qua hàng loạt công trình thực tế.
+              Dịch vụ khoan giếng tại Phú Yên là <strong className="font-semibold text-blue-700">giải pháp tối ưu</strong> cho nhu cầu cung cấp <strong className="font-semibold text-slate-900">nguồn nước sạch, ổn định và lâu dài</strong>. Với hơn 15 năm kinh nghiệm trong lĩnh vực khoan giếng, đội ngũ tại đây đã khẳng định được <strong className="font-semibold text-slate-900">uy tín và chất lượng</strong> qua hàng loạt công trình thực tế.
             </p>
             <p>
-              Khách hàng khi lựa chọn dịch vụ sẽ được đảm bảo về sự chuyên nghiệp, tận tâm và minh bạch trong từng khâu thực hiện. Hệ thống máy móc hiện đại cùng công nghệ tiên tiến được áp dụng nhằm mang lại hiệu quả cao, tiết kiệm thời gian và đảm bảo an toàn tuyệt đối trong quá trình thi công.
+              Khách hàng khi lựa chọn dịch vụ sẽ được đảm bảo về sự <strong className="font-semibold text-blue-700">chuyên nghiệp, tận tâm và minh bạch</strong> trong từng khâu thực hiện. <strong className="font-semibold text-slate-900">Hệ thống máy móc hiện đại</strong> cùng công nghệ tiên tiến được áp dụng nhằm mang lại <strong className="font-semibold text-slate-900">hiệu quả cao, tiết kiệm thời gian và đảm bảo an toàn tuyệt đối</strong> trong quá trình thi công.
             </p>
             <p>
-              Bên cạnh đó, dịch vụ còn cung cấp tư vấn kỹ thuật chuyên sâu, thiết kế hệ thống khai thác nước phù hợp với từng khu vực, cũng như hỗ trợ bảo trì - bảo dưỡng định kỳ. Nhờ đó, nguồn nước luôn được duy trì ổn định, đáp ứng tốt nhu cầu sinh hoạt và sản xuất lâu dài cho khách hàng.
+              Bên cạnh đó, dịch vụ còn cung cấp <strong className="font-semibold text-blue-700">tư vấn kỹ thuật chuyên sâu</strong>, <strong className="font-semibold text-slate-900">thiết kế hệ thống khai thác nước phù hợp</strong> với từng khu vực, cũng như hỗ trợ <strong className="font-semibold text-slate-900">bảo trì - bảo dưỡng định kỳ</strong>. Nhờ đó, nguồn nước luôn được duy trì ổn định, đáp ứng tốt nhu cầu sinh hoạt và sản xuất lâu dài cho khách hàng.
             </p>
           </div>
 
