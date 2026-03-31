@@ -127,10 +127,6 @@ function PricingPage() {
           <div className="grid overflow-hidden rounded-3xl border border-slate-200 bg-[#e9edf7] lg:grid-cols-2">
             <div className="p-8">
               <h3 className="font-display text-4xl font-bold text-[#083b88]">Yêu Cầu Báo Giá Chi Tiết</h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Để lại thông tin, đội ngũ kỹ thuật của chúng tôi sẽ liên hệ khảo sát địa hình và báo giá
-                chính xác trong vòng 24h.
-              </p>
 
               <form className="mt-6 space-y-4">
                 <div className="grid gap-3 sm:grid-cols-2">
