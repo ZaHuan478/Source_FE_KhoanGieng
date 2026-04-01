@@ -29,7 +29,7 @@ function ServicesSection() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mx-auto mt-8 grid w-full max-w-3xl grid-cols-1 gap-3 min-[480px]:grid-cols-[1fr_auto] min-[480px]:items-center">
             <label htmlFor="consult-phone" className="sr-only">
               Số điện thoại tư vấn
             </label>
@@ -38,14 +38,14 @@ function ServicesSection() {
               type="tel"
               inputMode="numeric"
               placeholder="Để lại số điện thoại để được tư vấn"
-              className="h-12 flex-1 rounded-full border border-slate-300 bg-white px-5 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+              className="h-12 w-full min-w-0 rounded-full border border-slate-300 bg-white px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 sm:px-5 sm:text-[15px]"
             />
             <a
               href="tel:0912345678"
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800"
+              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800 min-[480px]:w-auto min-[480px]:shrink-0 min-[480px]:px-6"
             >
               <Phone className="h-5 w-5" />
-              <span className="ml-2">Gọi ngay</span>
+              <span className="ml-1.5">Gọi ngay</span>
             </a>
           </div>
         </div>
