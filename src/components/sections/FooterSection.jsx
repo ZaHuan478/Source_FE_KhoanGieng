@@ -7,7 +7,7 @@ function FooterSection({ footerServices }) {
           <div className="mt-4 space-y-2.5 text-sm text-slate-700">
             <p className="text-base font-bold text-slate-800 uppercase">Công ty TNHH Trường Giang</p>
             <p><strong>Địa chỉ:</strong> Số 165 Hùng Vương, Phường Tuy Hòa, Tỉnh Đắk Lắk, Việt Nam</p>
-            <p><strong>Hotline:</strong> 0945455458</p>
+            <p><strong>Hotline:</strong> 0945 455 458</p>
             <p><strong>Email:</strong> huan1234@gmail.com</p>
           </div>
         </div>
@@ -21,7 +21,7 @@ function FooterSection({ footerServices }) {
         </div>
       </div>
       <div className="border-t border-slate-200 py-4 text-center text-[11px] text-slate-500">
-        © 2024 Khoan Giếng Phú Yên. Tất cả quyền được bảo lưu.
+        © 2024 CTY TNHH TRƯỜNG GIANG. Tất cả quyền được bảo lưu.
       </div>
     </footer>
   )

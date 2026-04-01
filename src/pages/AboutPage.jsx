@@ -3,6 +3,8 @@ import FooterSection from '../components/sections/FooterSection'
 import Header from '../components/sections/Header'
 import { footerServices, navItems } from '../data/siteContent'
 import equipmentImage from '../assets/images.jpg'
+import heroBackground from '../assets/347797942_1689138971534405_3431595703546068156_n.jpg'
+import downloadedImage from '../assets/6936ccfd-b606-471e-afea-f35479e0e8f6.jpg'
 
 const equipmentItems = [
   {
@@ -13,29 +15,7 @@ const equipmentItems = [
   {
     name: 'Xe vận tải chuyên dụng',
     note: 'Đảm bảo 4 đội kỹ thuật công trình di chuyển liên tỉnh nhanh.',
-    image:
-      'https://images.unsplash.com/photo-1631221462927-39e0f9f7c3f8?auto=format&fit=crop&w=800&q=80',
-  },
-]
-
-const experts = [
-  {
-    name: 'Kỹ sư. Ngô Gia Văn Thành',
-    role: 'CHUYÊN GIA ĐỊA CHẤT',
-    image:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    name: 'Ông. Trần Phú Khánh',
-    role: 'GIÁM ĐỐC ĐIỀU HÀNH',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-  },
-  {
-    name: 'Ông. Lê Mạnh Hoàng',
-    role: 'TRƯỞNG PHÒNG KỸ THUẬT CƠ ĐIỆN',
-    image:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=600&q=80',
+    image: heroBackground,
   },
 ]
 
@@ -74,7 +54,7 @@ function AboutPage() {
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?auto=format&fit=crop&w=1200&q=80"
+              src={downloadedImage}
               alt="Giàn khoan giếng tại Phú Yên"
               className="h-[420px] w-full rounded-[28px] object-cover shadow-xl shadow-slate-300/60"
             />
@@ -82,58 +62,6 @@ function AboutPage() {
               <p className="font-display text-xl font-bold italic text-[#805328]">
                 "Tận tâm - Chính xác - Bền vững"
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#ebeff7] py-14">
-          <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-display text-4xl font-bold">Tầm nhìn & Sứ mệnh</h2>
-            <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#1e4fa6]" />
-
-            <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_0.8fr]">
-              <article className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-                <div className="inline-flex rounded-full bg-blue-100 px-2 py-1 text-[10px] font-semibold text-blue-800">
-                  👁
-                </div>
-                <h3 className="mt-3 font-display text-3xl font-bold">Tầm nhìn Chiến lược</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Trở thành tập đoàn kỹ thuật địa chất hàng đầu tại Miền Trung,
-                  không chỉ cung cấp dịch vụ khoan giếng mà còn là chuyên gia giải pháp quản trị tài nguyên nước thông minh,
-                  ứng dụng công nghệ 4.0 vào thăm dò địa tầng.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-medium text-slate-600">Lộ trình 2030</span>
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-[11px] font-medium text-slate-600">Địa chất số hóa</span>
-                </div>
-              </article>
-
-              <article className="rounded-2xl bg-[#0a469f] p-6 text-white shadow-md">
-                <div className="inline-flex rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold">🚀</div>
-                <h3 className="mt-3 font-display text-3xl font-bold">Sứ mệnh</h3>
-                <p className="mt-3 text-sm leading-relaxed text-blue-100">
-                  Giải quyết bài toán thiếu nước sạch cho cộng đồng bằng những giải pháp kỹ thuật tối ưu,
-                  chi phí hợp lý và cam kết bảo vệ môi trường sinh thái.
-                </p>
-                <button className="mt-5 text-sm font-semibold text-white">
-                  Tìm hiểu thêm →
-                </button>
-              </article>
-            </div>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-3">
-              <article className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
-                <h4 className="text-sm font-semibold">Uy tín tuyệt đối</h4>
-                <p className="mt-2 text-xs text-slate-600">Cam kết đúng tiến độ và chất lượng nguồn nước như đã thỏa thuận ban đầu.</p>
-              </article>
-              <article className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
-                <h4 className="text-sm font-semibold">Công nghệ cao</h4>
-                <p className="mt-2 text-xs text-slate-600">Sử dụng hệ thống máy khoan xoay thủy lực, hiệu quả nhất khu vực.</p>
-              </article>
-              <article className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-100">
-                <h4 className="text-sm font-semibold">Bền vững</h4>
-                <p className="mt-2 text-xs text-slate-600">Thi công an toàn, không gây sụt lún, bảo vệ tầng nước ngầm tự nhiên.</p>
-              </article>
             </div>
           </div>
         </section>
@@ -175,17 +103,15 @@ function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-[#ebeff7] py-14">
+        <section className="bg-[#f3f5fb] py-14">
           <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-            <div className="mb-6 flex items-center justify-between">
-              <div>
-                <h3 className="font-display text-4xl font-bold">Hệ thống trang thiết bị</h3>
-                <p className="mt-2 text-sm text-slate-600">Đầu tư đồng bộ công nghệ tối tân để tối ưu hóa chi phí và đảm bảo an toàn tuyệt đối.</p>
+            <div className="mb-8">
+              <div className="flex items-center justify-center">
+                <div className="h-px flex-1 bg-slate-300"></div>
+                <h3 className="px-4 text-center font-display text-4xl font-bold">Hệ thống trang thiết bị</h3>
+                <div className="h-px flex-1 bg-slate-300"></div>
               </div>
-              <div className="hidden items-center gap-2 sm:flex">
-                <button className="h-7 w-7 rounded-full border border-slate-300 text-xs">‹</button>
-                <button className="h-7 w-7 rounded-full border border-slate-300 text-xs">›</button>
-              </div>
+              <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600">Đầu tư đồng bộ công nghệ tối tân để tối ưu hóa chi phí và đảm bảo an toàn tuyệt đối.</p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -216,7 +142,7 @@ function AboutPage() {
                 Yêu cầu tư vấn miễn phí
               </a>
               <a href="tel:0912345678" className="rounded-full border border-white px-5 py-2 text-sm font-semibold text-white">
-                Gọi: 09xx xxx xxx
+                Gọi: 0945 455 458
               </a>
             </div>
           </div>

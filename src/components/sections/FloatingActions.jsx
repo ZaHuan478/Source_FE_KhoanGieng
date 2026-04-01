@@ -1,18 +1,9 @@
 import { useEffect, useId, useState } from 'react'
+import { Phone } from 'lucide-react'
 
 const iconClass = 'h-[19px] w-[19px] shrink-0'
 const fabBtn =
   'flex h-12 w-12 items-center justify-center rounded-full text-white shadow-[8px_10px_18px_rgba(15,23,42,0.24),-4px_-4px_10px_rgba(255,255,255,0.22),inset_0_1px_1px_rgba(255,255,255,0.45)] transition duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/90 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-500/40'
-
-function HotlineFabIcon() {
-  return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M15.5 14.5 14 16a1 1 0 0 1-.95.27 12.9 12.9 0 0 1-5.32-3.32 12.9 12.9 0 0 1-3.32-5.32A1 1 0 0 1 4.68 6.7L6.2 5.18a.95.95 0 0 0 .08-1.24L5 2.26a1 1 0 0 0-1.56-.13L2 3.57a2.2 2.2 0 0 0-.53 2.36 18.3 18.3 0 0 0 10.6 10.6 2.2 2.2 0 0 0 2.36-.53l1.44-1.44a1 1 0 0 0-.13-1.56l-1.68-1.28a.95.95 0 0 0-1.24.08Z" />
-      <path d="M14.5 4.5A5.5 5.5 0 0 1 19.5 9.5" opacity="0.65" />
-    </svg>
-  )
-}
-
 function ZaloFabIcon() {
   return (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -54,6 +45,10 @@ function MainFabToggleIcon({ open }) {
   )
 }
 
+function HotlineIcon() {
+  return <Phone size={16} strokeWidth={2.5} />
+}
+
 const SOCIAL_ACTIONS = [
   {
     name: 'Facebook',
@@ -80,7 +75,7 @@ const SOCIAL_ACTIONS = [
     bgClass: 'from-white via-white to-white',
     hoverClass: 'hover:shadow-[0_0_24px_rgba(249,115,22,0.58)]',
     iconColorClass: 'text-[#f97316]',
-    Icon: HotlineFabIcon,
+    Icon: HotlineIcon,
   },
   {
     name: 'YouTube',

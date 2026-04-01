@@ -1,4 +1,5 @@
 import SectionTitle from '../common/SectionTitle'
+import { Phone } from 'lucide-react'
 
 function ServicesSection() {
   return (
@@ -43,7 +44,8 @@ function ServicesSection() {
               href="tel:0912345678"
               className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-blue-700 px-6 text-sm font-semibold text-white transition hover:bg-blue-800"
             >
-              Gọi ngay
+              <Phone className="h-5 w-5" />
+              <span className="ml-2">Gọi ngay</span>
             </a>
           </div>
         </div>

@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import FooterSection from '../components/sections/FooterSection'
 import Header from '../components/sections/Header'
 import InputField from '../components/common/InputField'
+import SelectField from '../components/common/SelectField'
+import TextareaField from '../components/common/TextareaField'
 import { footerServices, navItems } from '../data/siteContent'
+import { MapPinHouse } from 'lucide-react';
+import { Phone } from 'lucide-react'
+import { Mail } from 'lucide-react';
 
 function ContactPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,7 +25,7 @@ function ContactPage() {
     <div className="bg-[#f3f5fb] text-slate-900">
       <Header scrolled={scrolled} navItems={navItems} />
 
-      <main className="pt-20">
+      <main className="pt-10">
         <section className="relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=2000&q=80"
@@ -52,23 +57,27 @@ function ContactPage() {
 
                 <div className="mt-4 space-y-3">
                   <div className="rounded-xl bg-[#eef1f8] p-4">
-                    <p className="text-[10px] uppercase tracking-wide text-slate-500">Địa chỉ văn phòng</p>
-                    <p className="mt-1 text-xs text-slate-700">123 Trần Hưng Đạo, TP. Tuy Hòa, Phú Yên</p>
+                    <div className="flex items-center gap-2">
+                      <MapPinHouse className="h-5 w-5 text-slate-500" />
+                      <p className="text-base font-bold uppercase tracking-wide text-[#115CB9]">Địa chỉ văn phòng</p>
+                    </div>
+                    <p className="mt-2 text-xs text-slate-700">Số 165 Hùng Vương, Phường Tuy Hòa, Tỉnh Đắk Lắk, Việt Nam</p>
                   </div>
 
                   <div className="rounded-xl bg-[#eef1f8] p-4">
-                    <p className="text-[10px] uppercase tracking-wide text-slate-500">Hotline 24/7</p>
-                    <p className="mt-1 font-display text-3xl font-bold text-[#083b88]">0912 345 678</p>
+                    <div className="flex items-center gap-2">
+                      <Phone className="h-5 w-5 text-slate-500" />
+                      <p className="text-base font-bold uppercase tracking-wide text-[#115CB9]">Hotline 24/7</p>
+                    </div>
+                    <p className="mt-1 font-display text-xl font-bold text-[#083b88]">0945 455 458</p>
                   </div>
 
                   <div className="rounded-xl bg-[#eef1f8] p-4">
-                    <p className="text-[10px] uppercase tracking-wide text-slate-500">Email hỗ trợ</p>
-                    <p className="mt-1 text-xs text-slate-700">info@khoangiengphuyen.com</p>
-                  </div>
-
-                  <div className="rounded-xl bg-[#eef1f8] p-4">
-                    <p className="text-[10px] uppercase tracking-wide text-slate-500">Thời gian làm việc</p>
-                    <p className="mt-1 text-xs text-slate-700">Hoạt động 24/7 (kể cả ngày lễ)</p>
+                    <div className="flex items-center gap-2">
+                      <Mail className="h-5 w-5 text-slate-500" />
+                      <p className="text-base font-bold uppercase tracking-wide text-[#115CB9]">Email hỗ trợ</p>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-700">huan1234@gmail.com</p>
                   </div>
                 </div>
               </article>
@@ -86,37 +95,50 @@ function ContactPage() {
 
             <form className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100 sm:p-6">
               <h3 className="font-display text-2xl font-bold text-slate-900">Gửi lời nhắn cho chúng tôi</h3>
-              <p className="mt-2 text-xs text-slate-600">
-                Điền thông tin cơ bản, kỹ thuật viên sẽ liên hệ xác nhận trong thời gian sớm nhất.
-              </p>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <InputField label="Họ và tên" placeholder="Nguyễn Văn A" />
-                <InputField label="Số điện thoại" placeholder="09xx xxx xxx" />
+                <InputField
+                  label="HỌ VÀ TÊN"
+                  placeholder="Nguyễn Văn A"
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#976F46]"
+                />
+                <InputField
+                  label="SỐ ĐIỆN THOẠI"
+                  placeholder="09xx xxx xxx"
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#976F46]"
+                />
               </div>
 
               <div className="mt-4">
-                <InputField label="Địa chỉ email" placeholder="email@vi-du.com" />
+                <InputField
+                  label="ĐỊA CHỈ EMAIL"
+                  placeholder="email@vi-du.com"
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#976F46]"
+                />
               </div>
 
-              <label className="mt-4 block">
-                <span className="text-[11px] font-medium text-slate-600">Chọn dịch vụ cần tư vấn</span>
-                <select className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-xs text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100">
-                  <option>Khoan giếng gia đình</option>
-                  <option>Khoan giếng công nghiệp</option>
-                  <option>Sửa chữa máy bơm</option>
-                  <option>Vệ sinh thổi rửa giếng</option>
-                </select>
-              </label>
-
-              <label className="mt-4 block">
-                <span className="text-[11px] font-medium text-slate-600">Nội dung chi tiết</span>
-                <textarea
-                  rows="5"
-                  placeholder="Hãy mô tả nhu cầu của bạn..."
-                  className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-xs text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+              <div className="mt-4">
+                <SelectField
+                  label="CHỌN DỊCH VỤ CẦN TƯ VẤN"
+                  options={[
+                    'Khoan giếng gia đình',
+                    'Khoan giếng công nghiệp',
+                    'Sửa chữa máy bơm',
+                  ]}
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#976F46]"
+                  selectClassName="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-xs text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                 />
-              </label>
+              </div>
+
+              <div className="mt-4">
+                <TextareaField
+                  label="NỘI DUNG CHI TIẾT"
+                  rows={5}
+                  placeholder="Hãy mô tả nhu cầu của bạn..."
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#976F46]"
+                  textareaClassName="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-xs text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
+                />
+              </div>
 
               <button
                 type="submit"
@@ -131,29 +153,11 @@ function ContactPage() {
         <section className="mx-auto w-full max-w-[1200px] px-4 pb-8 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100">
             <iframe
-              title="Bản đồ Tuy Hòa"
-              src="https://www.google.com/maps?q=Tp.%20Tuy%20H%C3%B2a%2C%20Ph%C3%BA%20Y%C3%AAn&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1157810649183!2d109.31086547572428!3d13.091848012229157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316fec38c83a83cf%3A0x5a80759cf7e0ad24!2zQ8O0bmcgdHkgVE5ISCBUcsaw4budbmcgR2lhbmc!5e0!3m2!1svi!2s!4v1774990373481!5m2!1svi!2s"
               className="h-[320px] w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </div>
-        </section>
-
-        <section className="mx-auto w-full max-w-[1200px] px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-4 rounded-2xl bg-[#eef1f8] p-5 ring-1 ring-slate-200 sm:flex-row sm:items-center">
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Hỗ trợ kỹ thuật khẩn cấp?</p>
-              <p className="mt-1 text-xs text-slate-600">
-                Đội ngũ kỹ thuật viên sẵn sàng có mặt sau 30 phút yêu cầu.
-              </p>
-            </div>
-            <a
-              href="tel:0912345678"
-              className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-slate-900 shadow-sm ring-1 ring-slate-200 transition hover:bg-slate-50"
-            >
-              Yêu cầu khẩn cấp
-            </a>
           </div>
         </section>
       </main>

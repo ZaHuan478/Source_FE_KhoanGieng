@@ -88,7 +88,6 @@ export const footerServices = [
   'Khoan giếng công nghiệp',
   'Khoan giếng dân dụng',
   'Lắp đặt hệ thống bơm',
-  'Bảo trì và phục hồi giếng',
 ]
 
 export const pricingPlans = [

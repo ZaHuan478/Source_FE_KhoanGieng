@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import FooterSection from '../components/sections/FooterSection'
 import Header from '../components/sections/Header'
+import InputField from '../components/common/InputField'
+import TextareaField from '../components/common/TextareaField'
 import { footerServices, navItems, pricingPlans } from '../data/siteContent'
+import { Send } from 'lucide-react';
+import pricingImage from '../assets/481495946_998861202304426_3071185586648403937_n.jpg'
 
 function PricingPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -37,7 +41,7 @@ function PricingPage() {
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1647427060118-4911c9821b82?auto=format&fit=crop&w=1200&q=80"
+              src={pricingImage}
               alt="Máy khoan giếng ngoài đồng"
               className="h-[470px] w-full rounded-3xl object-cover"
             />
@@ -48,11 +52,15 @@ function PricingPage() {
           </div>
         </section>
 
-        <section className="bg-[#eef1f8] py-16">
+        <section className="bg-[#f2f4fa] py-16">
           <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
-            <h2 className="text-center font-display text-5xl font-bold text-[#06338a] sm:text-4xl">
-              Chi Phí Khoan Giếng Gia Đình
-            </h2>
+            <div className="flex items-center justify-center gap-4">
+              <span className="h-px flex-1 bg-slate-300" />
+              <h2 className="text-center font-display text-5xl font-bold text-[#06338a] sm:text-4xl">
+                Chi Phí Khoan Giếng Gia Đình
+              </h2>
+              <span className="h-px flex-1 bg-slate-300" />
+            </div>
             <p className="mt-3 text-center text-sm text-slate-600">
               Báo giá tham khảo dựa trên đường kính ống và độ sâu phổ biến tại khu vực Phú Yên
             </p>
@@ -124,62 +132,48 @@ function PricingPage() {
         </section>
 
         <section className="mx-auto w-full max-w-[1280px] px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="grid overflow-hidden rounded-3xl border border-slate-200 bg-[#e9edf7] lg:grid-cols-2">
+          <div className="grid overflow-hidden rounded-3xl border border-slate-200 bg-white lg:grid-cols-2">
             <div className="p-8">
               <h3 className="font-display text-4xl font-bold text-[#083b88]">Yêu Cầu Báo Giá Chi Tiết</h3>
 
               <form className="mt-6 space-y-4">
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <label className="block text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                    Họ và tên
-                    <input
-                      type="text"
-                      defaultValue="Nguyễn Văn A"
-                      className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
-                    />
-                  </label>
-                  <label className="block text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                    Số điện thoại
-                    <input
-                      type="text"
-                      defaultValue="0905 XXX XXX"
-                      className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
-                    />
-                  </label>
+                  <InputField
+                    label="Họ và tên"
+                    placeholder="Nguyễn Văn A"
+                    labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+                  />
+                  <InputField
+                    label="Số điện thoại"
+                    placeholder="0905 XXX XXX"
+                    labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+                  />
                 </div>
 
-                <label className="block text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                  Địa chỉ thi công
-                  <input
-                    type="text"
-                    defaultValue="Huyện/Thành phố tại Phú Yên"
-                    className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
-                  />
-                </label>
+                <InputField
+                  label="Địa chỉ thi công"
+                  placeholder="Huyện/Thành phố tại Phú Yên"
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+                />
 
-                <label className="block text-[11px] font-medium uppercase tracking-wide text-slate-500">
-                  Ghi chú yêu cầu
-                  <textarea
-                    rows="3"
-                    defaultValue="Ví dụ: Khoan giếng gia đình, độ sâu dự kiến 40m..."
-                    className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
-                  />
-                </label>
+                <TextareaField
+                  label="Ghi chú yêu cầu"
+                  rows={3}
+                  placeholder="Ví dụ: Khoan giếng gia đình, độ sâu dự kiến 40m..."
+                  labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+                  textareaClassName="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
+                />
 
                 <button
                   type="submit"
-                  className="w-full rounded-xl bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
                 >
+                  <Send className="h-4 w-4" />
                   Gửi yêu cầu báo giá
                 </button>
               </form>
             </div>
 
-            <img
-              src="https://images.unsplash.com/photo-1581091870622-2d17a42be38c?auto=format&fit=crop&w=1200&q=80"
-              alt="Kỹ sư khảo sát công trình"
-              className="h-full min-h-[520px] w-full object-cover"
-            />
           </div>
         </section>
       </main>
