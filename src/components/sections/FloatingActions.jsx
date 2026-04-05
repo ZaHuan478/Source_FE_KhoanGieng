@@ -1,23 +1,22 @@
 import { useEffect, useId, useState } from 'react'
 import { Phone } from 'lucide-react'
+import zaloIcon from '../../assets/icons8-zalo.svg'
+import facebookIcon from '../../assets/icons8-facebook-48.png'
 
 const iconClass = 'h-[19px] w-[19px] shrink-0'
+const zaloIconClass = 'h-8 w-8 shrink-0 object-contain'
+const facebookIconClass = 'h-8 w-8 shrink-0 object-contain'
 const fabBtn =
   'flex h-12 w-12 items-center justify-center rounded-full text-white shadow-[8px_10px_18px_rgba(15,23,42,0.24),-4px_-4px_10px_rgba(255,255,255,0.22),inset_0_1px_1px_rgba(255,255,255,0.45)] transition duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/90 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-500/40'
 function ZaloFabIcon() {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-      <path d="M7.3 8.3h9.4l-9.4 7.4h9.4" />
-    </svg>
+    <img src={zaloIcon} alt="" className={zaloIconClass} aria-hidden="true" />
   )
 }
 
 function FacebookFabIcon() {
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M13.4 21v-7h2.3l.38-2.75H13.4V9.5c0-.8.25-1.35 1.4-1.35h1.34V5.7c-.23-.03-1.03-.1-1.96-.1-1.95 0-3.28 1.2-3.28 3.38v2.27H8.7V14h2.24v7h2.45Z" />
-    </svg>
+    <img src={facebookIcon} alt="" className={facebookIconClass} aria-hidden="true" />
   )
 }
 
