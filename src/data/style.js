@@ -1,0 +1,2 @@
+export const fabBtn =
+  'flex h-12 w-12 items-center justify-center rounded-full text-white shadow-[8px_10px_18px_rgba(15,23,42,0.24),-4px_-4px_10px_rgba(255,255,255,0.22),inset_0_1px_1px_rgba(255,255,255,0.45)] transition duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/90 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-500/40'
