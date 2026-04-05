@@ -52,7 +52,7 @@ function ContactPage() {
                   Thông tin liên hệ
                 </p>
                 <h2 className="mt-3 font-display text-2xl font-bold text-slate-900">
-                  Gắn kết cộng đồng qua nguồn nước sạch
+                  CTY TNHH TRƯỜNG GIANG
                 </h2>
 
                 <div className="mt-4 space-y-3">

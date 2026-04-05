@@ -7,6 +7,7 @@ import HeroSection from '../components/sections/HeroSection'
 import HomeFeatureGridSection from '../components/sections/HomeFeatureGridSection'
 import ServicesSection from '../components/sections/ServicesSection'
 import WhyChooseUsSection from '../components/sections/WhyChooseUsSection'
+import FeatureHighlightsSection from '../components/sections/FeatureHighlightsSection'
 import {
   footerServices,
   navItems,
@@ -38,6 +39,7 @@ function HomePage() {
         </div>
       </div> */}
       <WhyChooseUsSection whyPoints={whyPoints} />
+      <FeatureHighlightsSection />
       <CtaBannerSection />
       <ContactSection />
       <FooterSection footerServices={footerServices} />

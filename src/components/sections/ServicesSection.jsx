@@ -38,11 +38,11 @@ function ServicesSection() {
               type="tel"
               inputMode="numeric"
               placeholder="Để lại số điện thoại để được tư vấn"
-              className="h-12 w-full min-w-0 rounded-full border border-slate-300 bg-white px-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 sm:px-5 sm:text-[15px]"
+              className="h-10 w-full min-w-0 rounded-full border border-black bg-[#E8E8E8] px-4 text-sm text-black outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 sm:px-5 sm:text-[15px]"
             />
             <a
               href="tel:0912345678"
-              className="inline-flex h-12 w-full items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800 min-[480px]:w-auto min-[480px]:shrink-0 min-[480px]:px-6"
+              className="inline-flex h-10 w-full items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800 min-[480px]:w-auto min-[480px]:shrink-0 min-[480px]:px-6"
             >
               <Phone className="h-5 w-5" />
               <span className="ml-1.5">Gọi ngay</span>
