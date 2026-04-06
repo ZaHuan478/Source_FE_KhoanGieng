@@ -9,21 +9,21 @@ const features = [
     description:
       'Trường Giang cung cấp đầy đủ các dịch vụ khoang giếng, sửa chữa giếng khoan,...',
     icon: <FileCheck className="h-8 w-8" />,
-    bgColor: 'white',
+    bgColor: '#D7E2FF',
   },
   {
     title: 'ĐỘI NGŨ THỢ CHUYÊN NGHIỆP',
     description:
       'Đội ngũ thợ chuyên nghiệp lành nghề hơn 20 năm kinh nghiệm, Tuân thủ quy trình chuẩn mực',
     icon: <UserCheck className="h-8 w-8" />,
-    bgColor: 'white',
+    bgColor: '#D7E2FF',
   },
   {
     title: 'HỖ TRỢ - TƯ VẤN',
     description:
       'Chúng tôi luôn sẵn sàng tư vấn và phục vụ quý khách 24/24h, không ngại đường xa',
     icon: <PhoneCall className="h-8 w-8" />,
-    bgColor: 'white',
+    bgColor: '#D7E2FF',
   },
 ]
 
