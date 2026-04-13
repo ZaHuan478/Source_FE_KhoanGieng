@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Phone } from 'lucide-react'
+import logoImage from '../../assets/2023-07-03.png'
 
 function Header({ scrolled, navItems }) {
   const location = useLocation()
@@ -21,8 +22,17 @@ function Header({ scrolled, navItems }) {
         }`}
     >
       <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link to="/" className="font-display text-sm font-bold text-slate-800 sm:text-lg">
-          TRƯỜNG GIANG
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 font-display text-sm font-bold text-slate-800 sm:text-lg"
+          aria-label="Trang chu Truong Giang"
+        >
+          <img
+            src={logoImage}
+            alt="Logo Truong Giang"
+            className="h-9 w-auto object-contain sm:h-11"
+          />
+          <span>TRƯỜNG GIANG</span>
         </Link>
         <nav className="hidden items-center gap-5 text-[12px] font-medium text-slate-600 lg:flex">
           {navItems.map((item) => (
