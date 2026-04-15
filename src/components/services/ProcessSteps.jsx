@@ -2,7 +2,7 @@ import { STEPS } from '../../data/servicesData'
 
 function ProcessSteps() {
   return (
-    <section className="bg-[#f3f5fb] py-14">
+    <section className="bg-white py-14">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
 
         {/* Divider heading */}

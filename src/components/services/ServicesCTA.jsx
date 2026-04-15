@@ -1,8 +1,8 @@
-import { Phone } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 
 function ServicesCTA() {
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-8">
+    <section className="px-4 py-14 sm:px-6 lg:px-8 bg-white">
       <div className="mx-auto max-w-[920px] rounded-[28px] bg-gradient-to-r from-[#7c5727] to-[#9a6a30] px-8 py-12 text-center text-white shadow-[0_12px_48px_rgba(124,87,39,0.30)]">
         <h3 className="mb-3 font-display text-[clamp(1.6rem,4vw,2.6rem)] font-extrabold leading-tight tracking-tight">
           Bạn cần giải pháp nước sạch ngay hôm nay?
@@ -19,10 +19,13 @@ function ServicesCTA() {
             0945 455 458
           </a>
           <a
-            href="/#lien-he"
-            className="inline-flex items-center rounded-full border border-white/55 px-7 py-[11px] text-[0.88rem] font-semibold text-white no-underline"
+            href="https://zalo.me/0945455458"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full gap-2 border border-white/55 px-7 py-[11px] text-[0.88rem] font-semibold text-white no-underline"
           >
-            Nhắn tin Zalo →
+            <MessageCircle size={15} />
+            Nhắn tin Zalo 
           </a>
         </div>
       </div>
