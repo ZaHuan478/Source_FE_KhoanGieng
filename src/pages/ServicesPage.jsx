@@ -29,7 +29,7 @@ function ServicesPage() {
     })
 
   return (
-    <div className="bg-[#f3f5fb] text-slate-900">
+    <div className="bg-white text-slate-900">
 
       <Header
         scrolled={scrolled}

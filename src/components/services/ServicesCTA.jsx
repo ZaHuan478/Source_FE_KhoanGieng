@@ -1,33 +1,49 @@
-import { Phone, MessageCircle } from 'lucide-react'
+import { Send } from 'lucide-react'
+import InputField from '../common/InputField'
+import TextareaField from '../common/TextareaField'
 
 function ServicesCTA() {
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-8 bg-white">
-      <div className="mx-auto max-w-[920px] rounded-[28px] bg-gradient-to-r from-[#7c5727] to-[#9a6a30] px-8 py-12 text-center text-white shadow-[0_12px_48px_rgba(124,87,39,0.30)]">
-        <h3 className="mb-3 font-display text-[clamp(1.6rem,4vw,2.6rem)] font-extrabold leading-tight tracking-tight">
-          Bạn cần giải pháp nước sạch ngay hôm nay?
-        </h3>
-        <p className="mx-auto mb-7 max-w-[480px] text-[0.88rem] leading-relaxed text-amber-100">
-          Đội ngũ kỹ sư sẵn sàng khảo sát trực tiếp và tư vấn phương án tối ưu chỉ sau 30 phút.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="tel:0945455458"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-[11px] text-[0.88rem] font-bold text-[#7c5727] no-underline shadow-[0_4px_16px_rgba(0,0,0,0.12)]"
+    <section id="yeu-cau-bao-gia" className="mx-auto mt-8 w-full max-w-4xl px-4 pb-16 sm:mt-10 sm:px-6 lg:px-8">
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+        <h3 className="font-display text-3xl font-bold text-[#083b88] sm:text-[2rem]">Yêu Cầu Báo Giá Chi Tiết</h3>
+
+        <form className="mt-5 space-y-4">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <InputField
+              label="Họ và tên"
+              placeholder="Nguyễn Văn A"
+              labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+            />
+            <InputField
+              label="Số điện thoại"
+              placeholder="0905 XXX XXX"
+              labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+            />
+          </div>
+
+          <InputField
+            label="Địa chỉ thi công"
+            placeholder="Huyện/Thành phố tại Phú Yên"
+            labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+          />
+
+          <TextareaField
+            label="Ghi chú yêu cầu"
+            rows={3}
+            placeholder="Ví dụ: Khoan giếng gia đình, độ sâu dự kiến 40m..."
+            labelClassName="text-[11px] font-medium uppercase tracking-wide text-[#D1A275]"
+            textareaClassName="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-blue-700"
+          />
+
+          <button
+            type="submit"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-800"
           >
-            <Phone size={15} />
-            0945 455 458
-          </a>
-          <a
-            href="https://zalo.me/0945455458"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full gap-2 border border-white/55 px-7 py-[11px] text-[0.88rem] font-semibold text-white no-underline"
-          >
-            <MessageCircle size={15} />
-            Nhắn tin Zalo 
-          </a>
-        </div>
+            <Send className="h-4 w-4" />
+            Gửi yêu cầu báo giá
+          </button>
+        </form>
       </div>
     </section>
   )

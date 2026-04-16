@@ -24,10 +24,10 @@ function ServicesDetail({ detailRef }) {
           <div className="flex flex-col gap-8">
             <div>
               <p className="mb-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[#0a3f94]">
-                Chi tiết dịch vụ &amp; bảng giá
+                Chi tiết dịch vụ thi công
               </p>
               <h2 className="mb-6 font-display text-[clamp(1.4rem,2.5vw,1.9rem)] font-extrabold tracking-tight text-slate-900">
-                Dịch Vụ &amp; Giá Tham Khảo
+                Dịch Vụ Khoan Giếng
               </h2>
               <ServiceAccordion title="Khoan Giếng" items={DRILL_ITEMS} />
             </div>
