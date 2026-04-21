@@ -4,9 +4,11 @@ function TextareaField({
   rows = 4,
   labelClassName,
   textareaClassName,
+  wrapperClassName,
+  ...textareaProps
 }) {
   return (
-    <label className="block">
+    <label className={wrapperClassName ?? 'block'}>
       <span className={`text-[13px] font-medium ${labelClassName ?? 'text-slate-600'}`}>{label}</span>
       <textarea
         rows={rows}
@@ -15,6 +17,7 @@ function TextareaField({
           textareaClassName ??
           'mt-1.5 w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100'
         }
+        {...textareaProps}
       />
     </label>
   )

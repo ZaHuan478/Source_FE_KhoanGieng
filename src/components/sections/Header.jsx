@@ -34,7 +34,7 @@ function Header({ scrolled, navItems }) {
           />
           <span>TRƯỜNG GIANG</span>
         </Link>
-        <nav className="hidden items-center gap-5 text-[12px] font-medium text-slate-600 lg:flex">
+        <nav className="hidden items-center gap-5 text-base font-semibold text-slate-600 lg:flex">
           {navItems.map((item) => (
             item.path ? (
               <Link
@@ -81,7 +81,7 @@ function Header({ scrolled, navItems }) {
       {menuOpen ? (
         <nav
           id="mobile-navigation"
-          className="border-t border-slate-200/80 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-md lg:hidden"
+          className="border-t border-slate-200/80 bg-white px-4 py-3 text-base font-semibold text-slate-700 shadow-md lg:hidden"
         >
           <div className="mx-auto flex w-full max-w-300 flex-col gap-2">
             {navItems.map((item) => (
