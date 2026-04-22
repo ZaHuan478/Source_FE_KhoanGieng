@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import FloatingActions from './components/sections/FloatingActions'
+import { FloatingActions } from './components/layout'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'

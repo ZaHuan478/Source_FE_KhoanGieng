@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-import Header from '../components/sections/Header'
-import FooterSection from '../components/sections/FooterSection'
+import { Header, FooterSection } from '../components/layout'
 
 import ServicesHero from '../components/services/ServicesHero'
 import ServicesDetail from '../components/services/ServicesDetail'

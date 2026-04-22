@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import Header from '../components/sections/Header'
-import FooterSection from '../components/sections/FooterSection'
+import { Header, FooterSection } from '../components/layout'
 
 import ContactHero from '../components/contact/ContactHero'
 import ContactInfoPanel from '../components/contact/ContactInfoPanel'

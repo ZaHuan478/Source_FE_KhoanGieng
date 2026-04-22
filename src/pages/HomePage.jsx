@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import CtaBannerSection from '../components/sections/CtaBannerSection'
-import FooterSection from '../components/sections/FooterSection'
-import Header from '../components/sections/Header'
-import HeroSection from '../components/sections/HeroSection'
-
-import ServicesSection from '../components/sections/ServicesSection'
-import WhyChooseUsSection from '../components/sections/WhyChooseUsSection'
-import FeatureHighlightsSection from '../components/sections/FeatureHighlightsSection'
+import { Header, FooterSection } from '../components/layout'
+import {
+  HeroSection,
+  ServicesSection,
+  WhyChooseUsSection,
+  FeatureHighlightsSection,
+  CtaBannerSection,
+} from '../components/home'
 import {
   footerServices,
   navItems,
