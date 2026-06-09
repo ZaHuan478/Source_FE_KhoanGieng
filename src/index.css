@@ -1,19 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --font-sans: 'Manrope', sans-serif;
-  --font-display: 'Sora', sans-serif;
+  --font-display: 'Playfair Display', serif;
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --page-bg:
+      radial-gradient(circle at 16% 12%, rgba(14, 99, 196, 0.18), transparent 32rem),
+      radial-gradient(circle at 82% 86%, rgba(56, 189, 248, 0.18), transparent 34rem),
+      linear-gradient(135deg, #eef7ff 0%, #f8fbff 48%, #eaf6ff 100%);
+    --page-text: #090f22;
+    --muted-text: #526078;
+    --soft-surface: rgba(255, 255, 255, 0.72);
+    --soft-surface-strong: rgba(255, 255, 255, 0.9);
+    --soft-border: rgba(83, 99, 127, 0.16);
+    --accent: #0a66c2;
+    --accent-soft: rgba(10, 102, 194, 0.14);
+    --nav-bg: rgba(255, 255, 255, 0.58);
+    --nav-active: #0a3f94;
+    --nav-active-text: #ffffff;
+    --shadow-soft: 0 22px 60px rgba(48, 58, 82, 0.12);
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --page-bg:
+      radial-gradient(circle at 14% 12%, rgba(37, 99, 235, 0.26), transparent 30rem),
+      radial-gradient(circle at 86% 78%, rgba(59, 130, 246, 0.18), transparent 32rem),
+      linear-gradient(135deg, #06111f 0%, #0b1d35 52%, #071421 100%);
+    --page-text: #f8fafc;
+    --muted-text: #a7b0c5;
+    --soft-surface: rgba(15, 23, 42, 0.72);
+    --soft-surface-strong: rgba(15, 23, 42, 0.9);
+    --soft-border: rgba(255, 255, 255, 0.14);
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.18);
+    --nav-bg: rgba(15, 23, 42, 0.62);
+    --nav-active: #ffffff;
+    --nav-active-text: #090f22;
+    --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.34);
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply m-0 min-h-screen bg-slate-100 font-sans antialiased;
-    font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.1rem);
+    @apply m-0 min-h-screen font-sans antialiased;
+    background: var(--page-bg);
+    color: var(--page-text);
+    font-size: 1rem;
     line-height: 1.7;
   }
 
@@ -24,20 +64,103 @@
   h5,
   h6 {
     @apply font-display;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    line-height: 1.08;
+    letter-spacing: 0;
   }
 
-  h1 {
-    font-size: clamp(2rem, 1.55rem + 1.8vw, 3rem);
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .app-shell {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--page-text);
+    overflow-x: hidden;
   }
 
-  h2 {
-    font-size: clamp(1.65rem, 1.3rem + 1.2vw, 2.35rem);
+  .app-shell::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: var(--page-bg);
+    pointer-events: none;
   }
 
-  h3 {
-    font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+  .site-flow {
+    position: relative;
+    background: transparent;
+  }
+
+  .site-flow > section {
+    position: relative;
+    margin: 0;
+    background: transparent !important;
+  }
+
+  .site-flow > section + section {
+    margin-top: -1px;
+    padding-top: clamp(2rem, 4vw, 3.5rem) !important;
+  }
+
+  .site-flow > section:not(:first-child) {
+    padding-bottom: clamp(2.25rem, 4vw, 3.75rem) !important;
+  }
+
+  .site-flow > section:first-child {
+    padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .soft-surface {
+    border: 1px solid var(--soft-border);
+    background: var(--soft-surface);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(22px);
+  }
+
+  .soft-surface-strong {
+    border: 1px solid var(--soft-border);
+    background: var(--soft-surface-strong);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(22px);
+  }
+
+  .ambient-section {
+    background: transparent;
+    color: var(--page-text);
+  }
+
+  .text-muted-theme {
+    color: var(--muted-text);
+  }
+
+  .accent-text {
+    color: var(--accent);
+  }
+
+  .glass-panel {
+    @apply border border-white/30 bg-white/18 shadow-[0_24px_80px_rgba(7,23,31,0.24)] backdrop-blur-xl;
+  }
+
+  .glass-panel-dark {
+    @apply border border-white/18 bg-slate-950/28 shadow-[0_24px_80px_rgba(2,8,23,0.32)] backdrop-blur-xl;
+  }
+
+  .editorial-title {
+    @apply font-display font-extrabold italic leading-[0.95];
+    letter-spacing: 0;
+  }
+
+  .eyebrow {
+    @apply text-xs font-extrabold uppercase;
+    color: var(--accent);
+    letter-spacing: 0;
   }
 }
 

@@ -1,41 +1,43 @@
-import { Phone } from 'lucide-react'
+import { ArrowDown, Drill, Phone } from 'lucide-react'
 
-function ServicesHero({ scrollToDetail }) {
+function ServicesHero({ scrollToDetail, image }) {
   return (
-    <section className="relative overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1800&q=80"
-        alt="Hệ thống ống nước công nghiệp"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0a2870]/96 to-[#0a2870]/60" />
+    <section className="relative overflow-hidden px-4 pb-12 pt-32 text-center sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(10,102,194,0.18),transparent_20rem),radial-gradient(circle_at_78%_76%,rgba(14,165,233,0.16),transparent_24rem)]" />
+      {/* {image?.url ? (
+        <img
+          src={image.url}
+          alt={image.alt || 'He thong thi cong khoan gieng'}
+          className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-[360px] w-[min(92%,980px)] rounded-[24px] object-cover opacity-16"
+        />
+      ) : null} */}
 
-      <div className="relative mx-auto w-full max-w-[1200px] px-4 py-[72px] sm:px-6 lg:px-8">
-        <span className="mb-3 inline-block rounded-full bg-white/20 px-4 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-blue-100">
-          Giải pháp dịch vụ
+      <div className="relative mx-auto flex min-h-[440px] max-w-5xl flex-col items-center justify-center">
+        <span className="soft-surface inline-flex h-8 items-center gap-2 rounded-full px-4 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[var(--muted-text)]">
+          <Drill className="h-3.5 w-3.5 accent-text" />
+          Service System
         </span>
-
-        <h1 className="mb-3.5 max-w-[560px] font-display text-[clamp(2rem,5vw,3.2rem)] font-extrabold leading-[1.1] tracking-tight text-white">
-          Giải Pháp Nguồn Nước<br />Bền Vững
+        <h1 className="mt-7 text-balance font-display text-[clamp(3rem,7vw,6.4rem)] font-extrabold uppercase leading-[0.9] text-[var(--page-text)]">
+          Giải pháp
+          <span className="accent-text block italic normal-case">nguồn nước</span>
         </h1>
-
-        <p className="mb-7 max-w-[480px] text-[0.9rem] leading-relaxed text-blue-100">
-          Từ khảo sát địa tầng, khoan giếng đến lắp đặt hệ thống bơm và điện hoàn chỉnh —
-          chúng tôi cung cấp giải pháp trọn gói cho gia đình và doanh nghiệp.
+        <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-8 text-[var(--muted-text)]">
+          Từ khảo sát địa tầng, khoan giếng đến lắp đặt hệ thống bơm và điện hoàn chỉnh,
+          chúng tôi cung cấp một quy trình rõ ràng cho từng công trình.
         </p>
-
-        <div className="flex flex-wrap gap-3">
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
           <button
             onClick={scrollToDetail}
-            className="cursor-pointer rounded-full border-none bg-white px-6 py-[11px] text-[0.85rem] font-bold text-[#0a3f94] shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-opacity hover:opacity-90"
+            className="inline-flex h-14 cursor-pointer items-center gap-3 rounded-[15px] border-none bg-[var(--accent)] px-6 text-base font-extrabold text-white shadow-[0_18px_38px_rgba(10,102,194,0.24)] transition hover:-translate-y-0.5"
           >
-            Xem dịch vụ →
+            Xem dịch vụ
+            <ArrowDown className="h-5 w-5" />
           </button>
           <a
             href="tel:0945455458"
-            className="inline-flex items-center gap-2 rounded-full border border-white/50 px-6 py-[11px] text-[0.85rem] font-semibold text-white no-underline"
+            className="soft-surface inline-flex h-14 items-center gap-3 rounded-[15px] px-6 text-base font-extrabold text-[var(--page-text)] transition hover:-translate-y-0.5"
           >
-            <Phone size={15} />
+            <Phone className="h-5 w-5 accent-text" />
             0945 455 458
           </a>
         </div>

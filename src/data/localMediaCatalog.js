@@ -1,0 +1,105 @@
+const localMediaCatalog = {
+  images: {
+    logo: {
+      key: 'logo',
+      type: 'image',
+      alt: 'Logo Trường Giang',
+      url: '/media/logo-2023-07-03.png',
+      source: 'frontend-local',
+    },
+    homeHero: {
+      key: 'homeHero',
+      type: 'image',
+      alt: 'Giàn khoan giếng đang thi công tại Phú Yên',
+      url: '/media/home-hero-drilling-rig.jpg',
+      source: 'frontend-local',
+    },
+    aboutHero: {
+      key: 'aboutHero',
+      type: 'image',
+      alt: 'Đội ngũ khoan giếng Trường Giang',
+      url: '/media/about-hero.jpg',
+      source: 'frontend-local',
+    },
+    equipmentMachine: {
+      key: 'equipmentMachine',
+      type: 'image',
+      alt: 'Máy khoan giếng chuyên dụng',
+      url: '/media/equipment-machine.jpg',
+      source: 'frontend-local',
+    },
+    fieldSurvey: {
+      key: 'fieldSurvey',
+      type: 'image',
+      alt: 'Khảo sát địa chất trước khi khoan',
+      url: '/media/field-survey.jpg',
+      source: 'frontend-local',
+    },
+    wellDrillingSite: {
+      key: 'wellDrillingSite',
+      type: 'image',
+      alt: 'Công trình khoan giếng thực tế',
+      url: '/media/well-drilling-site.jpg',
+      source: 'frontend-local',
+    },
+    pumpPipeSystem: {
+      key: 'pumpPipeSystem',
+      type: 'image',
+      alt: 'Hệ thống bơm và đường ống nước',
+      url: '/media/pump-pipe-system.jpg',
+      source: 'frontend-local',
+    },
+    servicesHero: {
+      key: 'servicesHero',
+      type: 'image',
+      alt: 'Hệ thống ống nước công nghiệp',
+      url: '/media/industrial-well-service.jpg',
+      source: 'frontend-local',
+    },
+    contactHero: {
+      key: 'contactHero',
+      type: 'image',
+      alt: 'Liên hệ khoan giếng Trường Giang',
+      url: '/media/field-survey.jpg',
+      source: 'frontend-local',
+    },
+    projectIrrigation: {
+      key: 'projectIrrigation',
+      type: 'image',
+      alt: 'Hệ thống tưới tiêu từ giếng khoan',
+      url: '/media/pump-pipe-system.jpg',
+      source: 'frontend-local',
+    },
+    projectPressureDrill: {
+      key: 'projectPressureDrill',
+      type: 'image',
+      alt: 'Thi công khoan áp lực',
+      url: '/media/well-drilling-site.jpg',
+      source: 'frontend-local',
+    },
+    projectTechnicalOperation: {
+      key: 'projectTechnicalOperation',
+      type: 'image',
+      alt: 'Vận hành kỹ thuật công trình giếng',
+      url: '/media/equipment-machine.jpg',
+      source: 'frontend-local',
+    },
+    projectCoastalWater: {
+      key: 'projectCoastalWater',
+      type: 'image',
+      alt: 'Cấp nước khu vực ven biển',
+      url: '/media/field-survey.jpg',
+      source: 'frontend-local',
+    },
+  },
+  videos: {
+    whyVideo: {
+      key: 'whyVideo',
+      type: 'video',
+      url: '/media/intro-drilling.mp4',
+      source: 'frontend-local',
+    },
+  },
+}
+
+export default localMediaCatalog

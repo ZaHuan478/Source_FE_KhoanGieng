@@ -1,31 +1,26 @@
-import heroBackground from '../assets/485740955_636924975781132_511707052888674987_n.jpg'
-import equipmentImage from '../assets/images.jpg'
-import heroBackground1 from '../assets/347797942_1689138971534405_3431595703546068156_n.jpg'
-import heroBackground2 from '../assets/481495946_998861202304426_3071185586648403937_n.jpg'
-
 export const homeFeatureTiles = [
   {
-    title: 'Thi công khoan giếng nhanh chóng – chuyên nghiệp',
-    description: 'Tư vấn đúng tầng nước, hạn chế rủi ro và tăng hiệu quả khai thác.',
-    image: heroBackground1,
+    title: 'Khảo sát đúng mạch nước',
+    description: 'Đánh giá địa chất trước khi thi công để hạn chế rủi ro và tối ưu độ sâu giếng.',
+    imageKey: 'fieldSurvey',
     alt: 'Khảo sát địa chất',
   },
   {
-    title: 'Khoan Giếng Phú Yên Uy Tín',
-    description: 'Thi công nhanh, máy móc hiện đại, đảm bảo nguồn nước ổn định cho mọi nhu cầu.',
-    image: heroBackground2,
+    title: 'Thi công nhanh, gọn, an toàn',
+    description: 'Máy khoan chuyên dụng giúp rút ngắn thời gian và giữ mặt bằng sạch sau thi công.',
+    imageKey: 'wellDrillingSite',
     alt: 'Thi công khoan giếng',
   },
   {
-    title: 'Dịch vụ Khoan Giếng Phú Yên',
-    description: '',
-    image: heroBackground,
-    alt: 'Hệ thống bơm và ống',
+    title: 'Hệ thống bơm ổn định',
+    description: 'Lắp đặt đường ống và máy bơm theo lưu lượng khai thác thực tế của từng công trình.',
+    imageKey: 'pumpPipeSystem',
+    alt: 'Hệ thống bơm và ống nước',
   },
   {
-    title: 'Bảo trì & phục hồi định kỳ',
-    description: 'Theo dõi lưu lượng, khắc phục sự cố để giếng hoạt động lâu dài.',
-    image: equipmentImage,
+    title: 'Bảo trì định kỳ',
+    description: 'Theo dõi lưu lượng, xử lý sự cố và phục hồi giếng để khai thác bền hơn.',
+    imageKey: 'equipmentMachine',
     alt: 'Bảo trì hệ thống giếng',
   },
 ]

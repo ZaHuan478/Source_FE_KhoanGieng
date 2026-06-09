@@ -8,11 +8,13 @@ import ProcessSteps from '../components/services/ProcessSteps'
 import ServicesCTA from '../components/services/ServicesCTA'
 
 import { footerServices, navItems } from '../data/siteContent'
+import { useMediaAssets } from '../hooks/useMediaAssets'
 
 
 function ServicesPage() {
 
   const [scrolled, setScrolled] = useState(false)
+  const { media } = useMediaAssets()
   const detailRef = useRef(null)
 
   useEffect(() => {
@@ -28,17 +30,19 @@ function ServicesPage() {
     })
 
   return (
-    <div className="bg-white text-slate-900">
+    <div className="app-shell">
 
       <Header
         scrolled={scrolled}
         navItems={navItems}
+        logo={media.images.logo}
       />
 
-      <main className="pt-14">
+      <main className="site-flow">
 
         <ServicesHero
           scrollToDetail={scrollToDetail}
+          image={media.images.servicesHero}
         />
 
         <ServicesDetail

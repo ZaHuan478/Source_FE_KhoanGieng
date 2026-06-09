@@ -7,9 +7,11 @@ import ContactFormPanel from '../components/contact/ContactFormPanel'
 import ContactMap from '../components/contact/ContactMap'
 
 import { navItems, footerServices } from '../data/siteContent'
+import { useMediaAssets } from '../hooks/useMediaAssets'
 
 function ContactPage() {
   const [scrolled, setScrolled] = useState(false)
+  const { media } = useMediaAssets()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16)
@@ -18,13 +20,13 @@ function ContactPage() {
   }, [])
 
   return (
-    <div className="bg-[#f9f9ff] text-slate-900">
-      <Header scrolled={scrolled} navItems={navItems} />
+    <div className="app-shell">
+      <Header scrolled={scrolled} navItems={navItems} logo={media.images.logo} />
 
-      <main className="pt-12">
-        <ContactHero />
+      <main className="site-flow">
+        <ContactHero image={media.images.contactHero} />
 
-        <section className="max-w-[1240px] mx-auto px-4 py-12 lg:grid lg:grid-cols-12 gap-7">
+        <section className="mx-auto grid max-w-[1240px] gap-7 px-4 py-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <ContactInfoPanel />
           </div>

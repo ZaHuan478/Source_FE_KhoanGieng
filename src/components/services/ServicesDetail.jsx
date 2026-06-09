@@ -1,10 +1,10 @@
-import { Phone, MessageCircle, ShieldCheck, Clock, Wrench, Star } from 'lucide-react'
+import { Clock, MessageCircle, Phone, ShieldCheck, Star, Wrench } from 'lucide-react'
 import ServiceAccordion from '../common/ServiceAccordion'
 import {
   DRILL_ITEMS,
+  ELECTRIC_ITEMS,
   MATERIAL_ITEMS,
   PUMP_ITEMS,
-  ELECTRIC_ITEMS,
 } from '../../data/servicesData'
 
 const TRUST_ITEMS = [
@@ -16,56 +16,52 @@ const TRUST_ITEMS = [
 
 function ServicesDetail({ detailRef }) {
   return (
-    <section ref={detailRef} className="bg-white py-14">
+    <section ref={detailRef} className="ambient-section py-10">
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1fr_340px]">
-
-          {/* Left — Accordions */}
-          <div className="flex flex-col gap-8">
-            <div>
-              <p className="mb-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[#0a3f94]">
-                Chi tiết dịch vụ thi công
-              </p>
-              <h2 className="mb-6 font-display text-[clamp(1.4rem,2.5vw,1.9rem)] font-extrabold tracking-tight text-slate-900">
-                Dịch Vụ Khoan Giếng
-              </h2>
-              <ServiceAccordion title="Khoan Giếng" items={DRILL_ITEMS} />
+        <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_340px]">
+          <div className="soft-surface rounded-[24px] p-5 sm:p-6">
+            <p className="inline-flex rounded-full bg-[var(--accent-soft)] px-4 py-2 text-xs font-extrabold uppercase text-[var(--accent)]">Chi tiết dịch vụ</p>
+            <h2 className="mb-6 font-display text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold italic leading-none text-[var(--page-text)]">
+              Dịch vụ khoan giếng
+            </h2>
+            <div className="flex flex-col gap-5">
+              <ServiceAccordion title="Khoan giếng" items={DRILL_ITEMS} />
+              <ServiceAccordion title="Vật tư lắp đặt giếng khoan" items={MATERIAL_ITEMS} />
+              <ServiceAccordion title="Lắp đặt máy bơm" items={PUMP_ITEMS} />
+              <ServiceAccordion title="Hệ thống điện" items={ELECTRIC_ITEMS} />
             </div>
-            <ServiceAccordion title="Vật Tư Lắp Đặt Giếng Khoan" items={MATERIAL_ITEMS} />
-            <ServiceAccordion title="Lắp Đặt Máy Bơm" items={PUMP_ITEMS} />
-            <ServiceAccordion title="Hệ Thống Điện" items={ELECTRIC_ITEMS} />
           </div>
 
-          {/* Right — Sticky Sidebar */}
-          <div className="flex flex-col gap-5 lg:sticky lg:top-20">
-
-            {/* Trust badges */}
-            <div className="rounded-2xl border border-[#e8edf6] bg-[#f8faff] p-5">
-              <p className="mb-4 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-black">
+          <aside className="flex flex-col gap-5 lg:sticky lg:top-28">
+            <div className="soft-surface rounded-[24px] p-5">
+              <p className="mb-4 text-[0.75rem] font-bold uppercase tracking-[0.12em] text-[var(--page-text)]">
                 Cam kết chất lượng
               </p>
               <ul className="flex flex-col gap-3">
-                {TRUST_ITEMS.map(({ icon: Icon, text }) => (
-                  <li key={text} className="flex items-start gap-3">
-                    <span className="mt-[1px] flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-[#e8f0fe] text-[#0a3f94]">
-                      <Icon size={14} strokeWidth={2.2} />
-                    </span>
-                    <span className="text-[0.82rem] leading-snug text-slate-600">{text}</span>
-                  </li>
-                ))}
+                {TRUST_ITEMS.map((item) => {
+                  const TrustIcon = item.icon
+
+                  return (
+                    <li key={item.text} className="flex items-start gap-3">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] bg-[var(--accent-soft)] text-[var(--accent)]">
+                        <TrustIcon size={15} strokeWidth={2.2} />
+                      </span>
+                      <span className="text-[0.85rem] leading-snug text-[var(--muted-text)]">{item.text}</span>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
 
-            {/* Contact CTA */}
-            <div className="rounded-2xl border border-[#e8edf6] bg-white p-5 shadow-sm">
-              <p className="mb-1 text-[0.85rem] font-bold text-slate-900">Liên hệ tư vấn miễn phí</p>
-              <p className="mb-4 text-[0.78rem] text-slate-500">
-                Gọi hoặc nhắn Zalo ngay — đội ngũ phản hồi trong 30 phút.
+            <div className="soft-surface rounded-[24px] p-5">
+              <p className="mb-1 text-[0.9rem] font-extrabold text-[var(--page-text)]">Liên hệ tư vấn miễn phí</p>
+              <p className="mb-4 text-[0.8rem] leading-6 text-[var(--muted-text)]">
+                Gọi hoặc nhắn Zalo, đội ngũ sẽ phản hồi và tư vấn phương án phù hợp.
               </p>
               <div className="flex flex-col gap-2.5">
                 <a
                   href="tel:0945455458"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0a3f94] to-[#1a6fd0] px-4 py-3 text-[0.85rem] font-bold text-white no-underline shadow-[0_4px_14px_rgba(10,63,148,0.28)] transition-opacity hover:opacity-90"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-4 py-3 text-[0.85rem] font-bold text-white no-underline transition-opacity hover:opacity-90"
                 >
                   <Phone size={15} />
                   0945 455 458
@@ -74,15 +70,14 @@ function ServicesDetail({ detailRef }) {
                   href="https://zalo.me/0945455458"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-[#0a3f94] bg-transparent px-4 py-3 text-[0.85rem] font-semibold text-[#0a3f94] no-underline transition-colors hover:bg-[#f0f5ff]"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-[var(--soft-border)] bg-[var(--soft-surface)] px-4 py-3 text-[0.85rem] font-semibold text-[var(--page-text)] no-underline transition-colors hover:bg-[var(--soft-surface-strong)]"
                 >
                   <MessageCircle size={15} />
                   Nhắn tin Zalo
                 </a>
               </div>
             </div>
-
-          </div>
+          </aside>
         </div>
       </div>
     </section>

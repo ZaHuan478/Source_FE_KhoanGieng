@@ -1,178 +1,104 @@
 import { useState } from 'react'
+import { ArrowRight, ChevronRight, Phone } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
-import { Phone } from 'lucide-react'
 import { homeFeatureTiles } from '../../data/homeFeatureTiles'
 
-function ServicesSection() {
+function ServicesSection({ mediaImages = {} }) {
   const [activeIndex, setActiveIndex] = useState(0)
-
-  const handleCardClick = () => {
-    setActiveIndex((prev) => (prev + 1) % homeFeatureTiles.length)
-  }
+  const featureTiles = homeFeatureTiles.map((tile) => ({
+    ...tile,
+    image: mediaImages[tile.imageKey]?.url,
+    alt: mediaImages[tile.imageKey]?.alt || tile.alt,
+  }))
+  const activeTile = featureTiles[activeIndex]
 
   return (
-    <section id="dich-vu" className="bg-white py-16">
-      <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        {/* ── Centered Title ── */}
-        <div className="flex items-center">
-          <div className="h-px flex-1 bg-slate-300" />
-          <div className="px-4 sm:px-6">
-            <SectionTitle align="center" title="Khoan Giếng Phú Yên" />
+    <section id="dich-vu" className="ambient-section relative overflow-hidden py-14">
+      <div className="absolute inset-x-0 top-0 h-px bg-[var(--soft-border)]" />
+      <div className="mx-auto grid w-full max-w-300 gap-7 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionTitle
+            align="left"
+            eyebrow="Dịch vụ trọng tâm"
+            title="Tìm đúng mạch nước trước khi bắt đầu khoan."
+            subtitle="Trường Giang kết hợp khảo sát thực địa, máy khoan chuyên dụng và quy trình bàn giao rõ ràng để nguồn nước khai thác ổn định lâu dài."
+          />
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {featureTiles.map((tile, index) => (
+              <button
+                key={tile.title}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`rounded-lg border p-4 text-left transition duration-300 ${
+                  index === activeIndex
+                    ? 'border-[var(--accent)] bg-[var(--accent)] text-white shadow-[0_18px_44px_rgba(10,102,194,0.18)]'
+                    : 'border-[var(--soft-border)] bg-[var(--soft-surface)] text-[var(--page-text)] hover:bg-[var(--soft-surface-strong)]'
+                }`}
+              >
+                <span className="text-xs font-extrabold uppercase">0{index + 1}</span>
+                <span className="mt-2 block text-base font-extrabold leading-6">{tile.title}</span>
+              </button>
+            ))}
           </div>
-          <div className="h-px flex-1 bg-slate-300" />
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="tel:0945455458"
+              className="inline-flex h-11 items-center gap-2 rounded-lg bg-[var(--nav-active)] px-4 text-sm font-extrabold text-[var(--nav-active-text)] transition hover:-translate-y-0.5"
+            >
+              <Phone className="h-4 w-4" />
+              0945 455 458
+            </a>
+            <a
+              href="#bao-gia"
+              className="soft-surface inline-flex h-11 items-center gap-2 rounded-lg px-4 text-sm font-bold text-[var(--page-text)] transition hover:bg-[var(--soft-surface-strong)]"
+            >
+              Nhận tư vấn
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:gap-16">
-
-          {/* ── LEFT: Text Content ── */}
-          <div className="flex-1 min-w-0">
-
-            <div className="mt-5 space-y-4 text-left text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg">
-              <p>
-                Dịch vụ khoan giếng tại Phú Yên là{' '}
-                <strong className="font-semibold text-blue-700">giải pháp tối ưu</strong> cho nhu
-                cầu cung cấp{' '}
-                <strong className="font-semibold text-slate-900">
-                  nguồn nước sạch, ổn định và lâu dài
-                </strong>
-                . Với hơn 15 năm kinh nghiệm trong lĩnh vực khoan giếng, đội ngũ tại đây đã khẳng
-                định được{' '}
-                <strong className="font-semibold text-slate-900">uy tín và chất lượng</strong> qua
-                hàng loạt công trình thực tế.
-              </p>
-              <p>
-                Khách hàng khi lựa chọn dịch vụ sẽ được đảm bảo về sự{' '}
-                <strong className="font-semibold text-blue-700">
-                  chuyên nghiệp, tận tâm và minh bạch
-                </strong>{' '}
-                trong từng khâu thực hiện.{' '}
-                <strong className="font-semibold text-slate-900">Hệ thống máy móc hiện đại</strong>{' '}
-                cùng công nghệ tiên tiến được áp dụng nhằm mang lại{' '}
-                <strong className="font-semibold text-slate-900">
-                  hiệu quả cao, tiết kiệm thời gian và đảm bảo an toàn tuyệt đối
-                </strong>{' '}
-                trong quá trình thi công.
-              </p>
-              <p>
-                Bên cạnh đó, dịch vụ còn cung cấp{' '}
-                <strong className="font-semibold text-blue-700">tư vấn kỹ thuật chuyên sâu</strong>
-                ,{' '}
-                <strong className="font-semibold text-slate-900">
-                  thiết kế hệ thống khai thác nước phù hợp
-                </strong>{' '}
-                với từng khu vực, cũng như hỗ trợ{' '}
-                <strong className="font-semibold text-slate-900">bảo trì - bảo dưỡng định kỳ</strong>
-                . Nhờ đó, nguồn nước luôn được duy trì ổn định, đáp ứng tốt nhu cầu sinh hoạt và
-                sản xuất lâu dài cho khách hàng.
-              </p>
-            </div>
-
-            <div className="mt-8 grid w-full grid-cols-1 gap-3 min-[480px]:grid-cols-[1fr_auto] min-[480px]:items-center">
-              <label htmlFor="consult-phone" className="sr-only">
-                Số điện thoại tư vấn
-              </label>
-              <input
-                id="consult-phone"
-                type="tel"
-                inputMode="numeric"
-                placeholder="Để lại số điện thoại để được tư vấn"
-                className="h-10 w-full min-w-0 rounded-full border border-black bg-[#E8E8E8] px-4 text-sm text-black outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 sm:px-5 sm:text-[15px]"
+        <div className="soft-surface rounded-[22px] p-3 sm:p-4">
+          <div className="relative min-h-[420px] overflow-hidden rounded-lg bg-slate-900">
+            {activeTile?.image ? (
+              <img
+                src={activeTile.image}
+                alt={activeTile.alt}
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <a
-                href="tel:0912345678"
-                className="inline-flex h-10 w-full items-center justify-center rounded-full bg-blue-700 px-5 text-sm font-semibold text-white transition hover:bg-blue-800 min-[480px]:w-auto min-[480px]:shrink-0 min-[480px]:px-6"
+            ) : (
+              <div className="absolute inset-0 bg-slate-800" />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/18 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
+              <p className="eyebrow text-sky-200">Hạng mục 0{activeIndex + 1}</p>
+              <h3 className="mt-3 max-w-xl font-display text-4xl font-extrabold italic leading-none text-white sm:text-5xl">
+                {activeTile?.title}
+              </h3>
+              <p className="mt-4 max-w-xl text-sm font-medium leading-7 text-white/78 sm:text-base">
+                {activeTile?.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            {featureTiles.slice(0, 3).map((tile, index) => (
+              <button
+                key={tile.title}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className="group flex h-20 items-center gap-3 rounded-lg border border-[var(--soft-border)] bg-[var(--soft-surface)] px-3 text-left text-[var(--page-text)] transition hover:bg-[var(--soft-surface-strong)]"
               >
-                <Phone className="h-5 w-5" />
-                <span className="ml-1.5">Gọi ngay</span>
-              </a>
-            </div>
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/14 text-xs font-extrabold">
+                  0{index + 1}
+                </span>
+                <span className="line-clamp-2 text-sm font-bold leading-5">{tile.title}</span>
+                <ChevronRight className="accent-text ml-auto h-4 w-4 shrink-0 transition group-hover:translate-x-0.5" />
+              </button>
+            ))}
           </div>
-
-          {/* ── RIGHT: Stacked Cards ── */}
-          <div
-            className="relative mx-auto w-full max-w-[380px] shrink-0 lg:w-[380px]"
-            style={{ height: '340px' }}
-          >
-            {/* Hint text */}
-            <p className="mb-3 text-center text-xs font-medium text-slate-400 tracking-wide uppercase">
-              Nhấn để xem thêm ảnh
-            </p>
-
-            {/* Stack layers */}
-            {homeFeatureTiles.map((tile, i) => {
-              // Offset each card: the top card is activeIndex
-              const total = homeFeatureTiles.length
-              const relIndex = (i - activeIndex + total) % total
-              const isTop = relIndex === 0
-
-              const translateY = relIndex * -8
-              const translateX = relIndex * 6
-              const rotate = relIndex === 0 ? 0 : relIndex % 2 === 0 ? relIndex * 1.5 : -(relIndex * 1.5)
-              const scale = 1 - relIndex * 0.04
-              const zIndex = total - relIndex
-
-              return (
-                <div
-                  key={tile.title}
-                  onClick={isTop ? handleCardClick : undefined}
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    transform: `translateY(${translateY}px) translateX(${translateX}px) rotate(${rotate}deg) scale(${scale})`,
-                    zIndex,
-                    transition: 'transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease',
-                    cursor: isTop ? 'pointer' : 'default',
-                  }}
-                >
-                  <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200">
-                    <img
-                      src={tile.image}
-                      alt={tile.alt}
-                      className="h-full w-full object-cover"
-                    />
-                    {/* Gradient overlay + title on top card */}
-                    {isTop && (
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                          <p className="text-sm font-semibold leading-snug text-white drop-shadow">
-                            {tile.title}
-                          </p>
-                          {tile.description && (
-                            <p className="mt-1 text-xs leading-relaxed text-white/80">
-                              {tile.description}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                    {/* Click hint icon on top card */}
-                    {isTop && (
-                      <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm">
-                        <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )
-            })}
-
-            {/* Dot indicators */}
-            <div className="absolute -bottom-8 left-0 right-0 flex items-center justify-center gap-1.5">
-              {homeFeatureTiles.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === activeIndex ? 'w-5 bg-blue-600' : 'w-1.5 bg-slate-300'
-                  }`}
-                  aria-label={`Xem ảnh ${i + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-
         </div>
       </div>
     </section>

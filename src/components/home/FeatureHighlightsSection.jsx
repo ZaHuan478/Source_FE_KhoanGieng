@@ -1,29 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
-import { PhoneCall } from 'lucide-react';
-import { UserCheck } from 'lucide-react';
-import { FileCheck } from 'lucide-react';
+import { FileCheck, PhoneCall, UserCheck } from 'lucide-react'
 
 const features = [
   {
-    title: 'ĐA DẠNG DỊCH VỤ',
-    description:
-      'Trường Giang cung cấp đầy đủ các dịch vụ khoang giếng, sửa chữa giếng khoan,...',
-    icon: <FileCheck className="h-8 w-8" />,
-    bgColor: '#D7E2FF',
+    title: 'Đa dạng dịch vụ',
+    description: 'Khoan giếng, sửa chữa giếng, lắp đặt bơm và bảo trì hệ thống khai thác nước.',
+    icon: FileCheck,
   },
   {
-    title: 'ĐỘI NGŨ THỢ CHUYÊN NGHIỆP',
-    description:
-      'Đội ngũ thợ chuyên nghiệp lành nghề hơn 20 năm kinh nghiệm, Tuân thủ quy trình chuẩn mực',
-    icon: <UserCheck className="h-8 w-8" />,
-    bgColor: '#D7E2FF',
+    title: 'Thợ lành nghề',
+    description: 'Đội ngũ có kinh nghiệm thực địa, hiểu địa chất khu vực và xử lý tình huống nhanh.',
+    icon: UserCheck,
   },
   {
-    title: 'HỖ TRỢ - TƯ VẤN',
-    description:
-      'Chúng tôi luôn sẵn sàng tư vấn và phục vụ quý khách 24/24h, không ngại đường xa',
-    icon: <PhoneCall className="h-8 w-8" />,
-    bgColor: '#D7E2FF',
+    title: 'Hỗ trợ 24/7',
+    description: 'Tư vấn kịp thời cho công trình cần nguồn nước ổn định hoặc cần xử lý sự cố gấp.',
+    icon: PhoneCall,
   },
 ]
 
@@ -39,50 +31,39 @@ function FeatureHighlightsSection() {
           observer.unobserve(entry.target)
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     )
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} className="bg-white py-16">
-      <div className="mx-auto w-full max-w-6xl pxf7f7f7-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
+    <section ref={sectionRef} className="ambient-section pb-14">
+      <div className="mx-auto grid w-full max-w-300 gap-3 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+        {features.map((feature, index) => {
+          const Icon = feature.icon
+          return (
             <div
               key={feature.title}
-              className={`flex flex-col items-center text-center ${index < features.length - 1 ? 'lg:border-r lg:border-slate-300' : ''
-                }`}
+              className="soft-surface rounded-[18px] p-5"
               style={{
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                transition: `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+                transition: `opacity 0.6s ease ${index * 0.16}s, transform 0.6s ease ${index * 0.16}s`,
               }}
             >
-              {/* Icon circle */}
-              <div
-                className="mb-5 flex h-16 w-16 items-center justify-center rounded-full p-4 shadow-md transition-transform duration-300 hover:scale-110"
-                style={{
-                  backgroundColor: feature.bgColor,
-                  border: '2px solid #3975D4',
-                }}
-              >
-                {feature.icon}
+              <div className="flex items-start gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[var(--nav-active)] text-[var(--nav-active-text)]">
+                  <Icon className="h-6 w-6" />
+                </span>
+                <div>
+                  <h3 className="font-sans text-lg font-extrabold text-[var(--page-text)]">{feature.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[var(--muted-text)]">{feature.description}</p>
+                </div>
               </div>
-
-              {/* Title */}
-              <h3 className="mb-3 text-base font-bold tracking-wide text-slate-800 sm:text-lg">
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="max-w-xs text-sm leading-relaxed text-slate-600 sm:text-[15px]">
-                {feature.description}
-              </p>
             </div>
-          ))}
-        </div>
+          )
+        })}
       </div>
     </section>
   )

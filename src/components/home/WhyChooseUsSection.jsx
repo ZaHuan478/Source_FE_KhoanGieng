@@ -1,30 +1,36 @@
+import { createElement } from 'react'
+import { BadgeCheck, Gauge, ShieldCheck } from 'lucide-react'
 import SectionTitle from '../common/SectionTitle'
-import IntroVideo from '../../assets/FSave.com_Facebook_Media_002_1631171251370202v.mp4'
 
-function WhyChooseUsSection({ whyPoints }) {
+const proofPoints = [
+  {
+    title: 'Khảo sát trước khi khoan',
+    description: 'Đánh giá vị trí, tầng nước và điều kiện mặt bằng để chọn phương án thi công phù hợp.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Máy móc chuyên dụng',
+    description: 'Thi công nhanh, gọn và kiểm soát tốt tiến độ cho công trình dân dụng lẫn sản xuất.',
+    icon: Gauge,
+  },
+  {
+    title: 'Bàn giao rõ ràng',
+    description: 'Tư vấn vận hành, bảo trì và kiểm tra lưu lượng sau khi hoàn tất công trình.',
+    icon: BadgeCheck,
+  },
+]
+
+function WhyChooseUsSection({ whyPoints, video }) {
   return (
-    <section id="gioi-thieu" className="bg-white py-14">
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-
-        <div className="flex items-center justify-center">
-          <div className="h-px flex-1 bg-slate-300"></div>
-          <div className="px-4 sm:px-6">
-            <SectionTitle
-              align="center"
-              title="Tại sao chọn Khoan Giếng Phú Yên?"
-            />
-          </div>
-          <div className="h-px flex-1 bg-slate-300"></div>
-        </div>
-
-        <div className="mx-auto mt-10 flex flex-col gap-10 lg:flex-row-reverse lg:items-center">
-          <div className="w-full lg:w-1/2">
-            <div className="relative overflow-hidden rounded-2xl bg-black shadow-lg ring-1 ring-slate-900/5">
+    <section id="gioi-thieu" className="ambient-section py-14">
+      <div className="mx-auto grid w-full max-w-300 gap-7 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="soft-surface overflow-hidden rounded-[22px] p-3">
+          <div className="relative overflow-hidden rounded-lg bg-slate-950">
+            {video?.url ? (
               <video
-                src={IntroVideo}
-                className="w-full h-[300px] sm:h-[350px] lg:h-[400px] object-cover"
+                src={video.url}
+                className="h-[320px] w-full object-cover sm:h-[420px]"
                 controls
-                autoPlay
                 muted
                 loop
                 playsInline
@@ -32,33 +38,45 @@ function WhyChooseUsSection({ whyPoints }) {
               >
                 Trình duyệt của bạn không hỗ trợ thẻ video.
               </video>
+            ) : (
+              <div className="h-[320px] w-full bg-slate-900 sm:h-[420px]" />
+            )}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/82 to-transparent p-5">
+              <p className="text-sm font-bold text-white/78">Công trình thực tế</p>
+              <p className="mt-1 font-display text-3xl font-extrabold italic text-white">
+                Thi công tại hiện trường
+              </p>
             </div>
           </div>
+        </div>
 
-          <div className="w-full text-slate-700 lg:w-1/2">
-            <div className="text-base leading-relaxed sm:text-lg">
-              <p>{whyPoints[0]}</p>
-            </div>
+        <div>
+          <SectionTitle
+            align="left"
+            eyebrow="Vì sao chọn chúng tôi"
+            title="Kỹ thuật chắc, báo giá rõ, vận hành bền."
+            subtitle="Không chỉ khoan xong là kết thúc, đội ngũ còn tư vấn hệ thống bơm và cách khai thác để giếng hoạt động ổn định."
+          />
 
-            <div className="mt-8 flex flex-col gap-4">
-              <div className="flex items-start gap-4">
-                <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-black"></div>
-                <div>
-                  <h4 className="font-semibold text-slate-900">Kinh nghiệm thực chiến</h4>
-                  <p className="mt-1 text-sm text-slate-600">Đội ngũ thợ lành nghề, am hiểu địa chất khu vực, xử lý tốt mọi tình huống.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-black"></div>
-                <div>
-                  <h4 className="font-semibold text-slate-900">Máy móc hiện đại</h4>
-                  <p className="mt-1 text-sm text-slate-600">Cam kết thi công nhanh gọn, chính xác, đảm bảo nguồn nước sạch và ổn định.</p>
-                </div>
-              </div>
-            </div>
+          <div className="soft-surface mt-6 rounded-[18px] p-5 text-base leading-8 text-[var(--muted-text)]">
+            <p>{whyPoints[0]}</p>
           </div>
 
+          <div className="mt-5 grid gap-3">
+            {proofPoints.map((point) => (
+              <div key={point.title} className="soft-surface rounded-[18px] p-4">
+                <div className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[var(--nav-active)] text-[var(--nav-active-text)]">
+                    {createElement(point.icon, { className: 'h-5 w-5' })}
+                  </span>
+                  <div>
+                    <h3 className="font-sans text-base font-extrabold text-[var(--page-text)]">{point.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-[var(--muted-text)]">{point.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,79 +1,100 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Phone } from 'lucide-react'
-import logoImage from '../../assets/2023-07-03.png'
+import { Home, Menu, Moon, Phone, Search, Sun, X } from 'lucide-react'
+import { useTheme } from '../../context/useTheme'
 
-function Header({ scrolled, navItems }) {
+function Header({ scrolled, navItems, logo }) {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [location.pathname])
+  const { isDark, toggleTheme } = useTheme()
 
   const resolveSectionHref = (sectionId) =>
     location.pathname === '/' ? `#${sectionId}` : `/#${sectionId}`
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-70 pt-[env(safe-area-inset-top)] transition duration-300 ${scrolled
-        ? 'border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-md'
-        : 'bg-white/70 backdrop-blur-sm'
+    <header className="fixed inset-x-0 top-0 z-70 pt-[env(safe-area-inset-top)]">
+      <div
+        className={`mx-auto mt-4 flex w-[min(100%-24px,1500px)] items-center justify-between gap-3 rounded-[18px] border px-4 py-2.5 backdrop-blur-2xl transition duration-300 sm:px-5 ${
+          scrolled
+            ? 'border-[var(--soft-border)] bg-[var(--soft-surface-strong)] shadow-[var(--shadow-soft)]'
+            : 'border-transparent bg-transparent'
         }`}
-    >
-      <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+      >
         <Link
           to="/"
-          className="inline-flex items-center gap-2 font-display text-sm font-bold text-slate-800 sm:text-lg"
+          className="inline-flex min-w-0 items-center gap-3 text-[clamp(0.9rem,1.3vw,1.18rem)] font-extrabold text-[var(--page-text)]"
           aria-label="Trang chu Truong Giang"
         >
-          <img
-            src={logoImage}
-            alt="Logo Truong Giang"
-            className="h-9 w-auto object-contain sm:h-11"
-          />
-          <span>TRƯỜNG GIANG</span>
+          {logo?.url ? (
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-[var(--soft-border)] bg-white/80 p-1.5">
+              <img
+                src={logo.url}
+                alt={logo.alt || 'Logo Truong Giang'}
+                className="h-full w-full object-contain"
+              />
+            </span>
+          ) : null}
+          <span className="truncate">
+            Trường Giang
+          </span>
         </Link>
-        <nav className="hidden items-center gap-5 text-base font-semibold text-slate-600 lg:flex">
-          {navItems.map((item) => (
+
+        <nav className="hidden items-center gap-1 rounded-[14px] border border-[var(--soft-border)] bg-[var(--nav-bg)] p-1 text-xs font-extrabold uppercase text-[var(--muted-text)] shadow-sm backdrop-blur-xl lg:flex">
+          {navItems.map((item, index) =>
             item.path ? (
               <Link
                 key={item.label}
                 to={item.path}
-                className={`transition hover:text-blue-700 ${location.pathname === item.path ? 'text-blue-700' : ''
-                  }`}
+                className={`inline-flex h-10 items-center gap-2 rounded-[11px] px-4 transition ${
+                  location.pathname === item.path
+                    ? 'bg-[var(--nav-active)] text-[var(--nav-active-text)] shadow-[0_10px_24px_rgba(9,17,36,0.16)]'
+                    : 'hover:bg-white/45 hover:text-[var(--page-text)]'
+                }`}
               >
+                {index === 0 ? <Home className="h-4 w-4" /> : null}
                 {item.label}
               </Link>
             ) : (
               <a
                 key={item.label}
                 href={resolveSectionHref(item.sectionId)}
-                className="transition hover:text-blue-700"
+                className="inline-flex h-10 items-center rounded-[11px] px-4 transition hover:bg-white/45 hover:text-[var(--page-text)]"
               >
                 {item.label}
               </a>
-            )
-          ))}
+            ),
+          )}
         </nav>
+
         <div className="flex items-center gap-2">
+          <div className="hidden h-11 w-72 items-center gap-3 rounded-[13px] border border-[var(--soft-border)] bg-[var(--soft-surface)] px-4 text-sm text-[var(--muted-text)] xl:flex">
+            <Search className="h-4 w-4" />
+            <span>Tim dich vu...</span>
+          </div>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[13px] border border-[var(--soft-border)] bg-[var(--soft-surface)] text-[var(--page-text)] shadow-sm transition hover:-translate-y-0.5"
+            aria-label={isDark ? 'Chuyen sang giao dien sang' : 'Chuyen sang giao dien toi'}
+          >
+            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
           <a
             href={resolveSectionHref('lien-he')}
-            className="hidden rounded-lg gap-2 bg-blue-800 px-4 py-2 text-xs font-semibold text-white transition hover:bg-blue-700 sm:inline-flex"
+            className="hidden h-11 items-center gap-2 rounded-[13px] bg-[var(--nav-active)] px-4 text-sm font-extrabold text-[var(--nav-active-text)] shadow-[0_12px_26px_rgba(9,17,36,0.18)] transition hover:-translate-y-0.5 sm:inline-flex"
           >
             <Phone className="h-4 w-4" />
-
-            Liên hệ ngay
+            Liên hệ
           </a>
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-3 py-2 text-[11px] font-semibold text-slate-700 transition hover:bg-slate-50 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[13px] border border-[var(--soft-border)] bg-[var(--soft-surface)] text-[var(--page-text)] transition lg:hidden"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             aria-label="Mo menu dieu huong"
           >
-            Menu
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -81,38 +102,31 @@ function Header({ scrolled, navItems }) {
       {menuOpen ? (
         <nav
           id="mobile-navigation"
-          className="border-t border-slate-200/80 bg-white px-4 py-3 text-base font-semibold text-slate-700 shadow-md lg:hidden"
+          className="mx-auto mt-2 flex w-[min(100%-24px,1500px)] flex-col gap-2 rounded-[18px] border border-[var(--soft-border)] bg-[var(--soft-surface-strong)] p-3 text-sm font-bold text-[var(--page-text)] shadow-[var(--shadow-soft)] backdrop-blur-2xl lg:hidden"
         >
-          <div className="mx-auto flex w-full max-w-300 flex-col gap-2">
-            {navItems.map((item) => (
-              item.path ? (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  className={`rounded-md px-2 py-2 transition hover:bg-slate-100 hover:text-blue-700 ${location.pathname === item.path ? 'bg-slate-100 text-blue-700' : ''
-                    }`}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={resolveSectionHref(item.sectionId)}
-                  className="rounded-md px-2 py-2 transition hover:bg-slate-100 hover:text-blue-700"
-                >
-                  {item.label}
-                </a>
-              )
-            ))}
-            <a
-              href={resolveSectionHref('lien-he')}
-              className="mt-1 gap-2 inline-flex w-full items-center justify-center rounded-lg bg-blue-800 px-4 py-2 text-xs font-semibold text-white transition hover:bg-blue-700 sm:hidden"
-            >
-              <Phone className="h-4 w-4" />
-
-              Liên hệ ngay
-            </a>
-          </div>
+          {navItems.map((item) =>
+            item.path ? (
+              <Link
+                key={item.label}
+                to={item.path}
+                onClick={() => setMenuOpen(false)}
+                className={`rounded-[12px] px-3 py-2 transition ${
+                  location.pathname === item.path ? 'bg-[var(--accent-soft)] accent-text' : ''
+                }`}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={resolveSectionHref(item.sectionId)}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-[12px] px-3 py-2 transition hover:bg-[var(--accent-soft)]"
+              >
+                {item.label}
+              </a>
+            ),
+          )}
         </nav>
       ) : null}
     </header>

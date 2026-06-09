@@ -9,11 +9,15 @@ import {
 
 import { footerServices, navItems } from '../data/siteContent'
 import { equipmentItems } from '../data/aboutData'
-
-import downloadedImage from '../assets/6936ccfd-b606-471e-afea-f35479e0e8f6.jpg'
+import { useMediaAssets } from '../hooks/useMediaAssets'
 
 function AboutPage() {
   const [scrolled, setScrolled] = useState(false)
+  const { media } = useMediaAssets()
+  const resolvedEquipmentItems = equipmentItems.map((item) => ({
+    ...item,
+    image: media.images[item.imageKey]?.url,
+  }))
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16)
@@ -22,14 +26,13 @@ function AboutPage() {
   }, [])
 
   return (
-    <div className="bg-[#f3f5fb] text-slate-900">
-      <Header scrolled={scrolled} navItems={navItems} />
+    <div className="app-shell">
+      <Header scrolled={scrolled} navItems={navItems} logo={media.images.logo} />
 
-      <main className="pt-20">
-        <AboutHero image={downloadedImage} />
-        <AboutTimeline />
-        <EquipmentSection equipmentItems={equipmentItems} />
-        <section className="mx-auto w-full max-w-[1200px] px-4 py-14 sm:px-6 lg:px-8"></section>
+      <main className="site-flow">
+        <AboutHero image={media.images.aboutHero?.url} />
+        <AboutTimeline image={media.images.aboutTimeline} />
+        <EquipmentSection equipmentItems={resolvedEquipmentItems} />
         <AboutCTA />
       </main>
 

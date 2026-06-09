@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitLead } from '../../api/leadApi'
 
 const initialForm = { name: '', phone: '', address: '', depth: '' }
 
@@ -48,12 +49,25 @@ function QuoteForm() {
     if (errors[name]) setErrors((er) => ({ ...er, [name]: '' }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
     setLoading(true)
-    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1200)
+    try {
+      await submitLead({
+        source: 'quote',
+        fullName: form.name,
+        phone: form.phone,
+        address: form.address,
+        estimatedDepth: form.depth,
+      })
+      setSubmitted(true)
+    } catch (err) {
+      setErrors(err.details || { submit: 'Khong the gui yeu cau. Vui long thu lai.' })
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -139,6 +153,9 @@ function QuoteForm() {
           'Gửi yêu cầu báo giá →'
         )}
       </button>
+      {errors.submit ? (
+        <p className="mt-2 text-center text-[0.78rem] font-semibold text-red-600">{errors.submit}</p>
+      ) : null}
     </form>
   )
 }
