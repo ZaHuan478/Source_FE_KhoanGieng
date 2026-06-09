@@ -34,7 +34,7 @@ function ServicesCTA() {
   return (
     <section id="yeu-cau-bao-gia" className="mx-auto mt-8 w-full max-w-4xl px-4 pb-16 sm:mt-10 sm:px-6 lg:px-8">
       <div className="soft-surface rounded-3xl p-6 sm:p-7">
-        <h3 className="font-display text-3xl font-bold italic text-[var(--page-text)] sm:text-[2rem]">Yêu Cầu Báo Giá Chi Tiết</h3>
+        <h3 className="font-display text-3xl font-bold  text-[var(--page-text)] sm:text-[2rem]">Yêu Cầu Báo Giá Chi Tiết</h3>
 
         <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -96,7 +96,7 @@ function ServicesCTA() {
             className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <Send className="h-4 w-4" />
-            {status === 'loading' ? 'Dang gui...' : 'Gui yeu cau bao gia'}
+            {status === 'loading' ? 'Dang gui...' : 'Gửi yêu cầu báo giá'}
           </button>
         </form>
       </div>

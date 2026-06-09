@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import { FloatingActions } from './components/layout'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
@@ -14,7 +13,6 @@ function App() {
         <Route path="/dich-vu" element={<ServicesPage />} />
         <Route path="/lien-he" element={<ContactPage />} />
       </Routes>
-      <FloatingActions />
     </>
   )
 }

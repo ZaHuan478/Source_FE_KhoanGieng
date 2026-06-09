@@ -14,18 +14,18 @@ function ProcessSteps() {
           <div>
             <div className="flex items-center gap-3">
               <span className="h-1 w-10 rounded-full bg-[#0a66c2]" />
-              <span className="text-xs font-extrabold uppercase text-[var(--muted-text)]">
+              <span className="inline-flex rounded-full bg-[var(--accent-soft)] px-4 py-2 text-xs font-extrabold uppercase text-[var(--accent)]">
                 Theo dõi từng bước
               </span>
             </div>
 
-            <h3 className="mt-4 max-w-3xl font-sans text-[clamp(3.2rem,8vw,6.8rem)] font-black uppercase italic leading-[0.84] text-[#101827]">
+            <h3 className="mt-4 max-w-3xl font-sans text-[clamp(3.2rem,8vw,6.8rem)] font-black uppercase italic leading-[0.84] text-[var(--page-text)]">
               Quy trình
               <span className="block text-[#0a66c2]">thi công</span>
             </h3>
           </div>
 
-          <div className="hidden rounded-2xl border border-[var(--soft-border)] bg-white/60 px-5 py-4 text-xs font-extrabold uppercase text-[var(--muted-text)] shadow-[0_16px_40px_rgba(15,23,42,0.08)] backdrop-blur md:flex md:items-center md:gap-2">
+          <div className="hidden rounded-2xl border border-[var(--soft-border)] bg-[var(--soft-surface-strong)] px-5 py-4 text-xs font-extrabold uppercase text-[var(--page-text)] shadow-[0_16px_40px_rgba(15,23,42,0.08)] backdrop-blur md:flex md:items-center md:gap-2">
             <ClipboardList className="h-4 w-4 text-[#0a66c2]" />
             Kiểm soát chi phí
           </div>
@@ -41,7 +41,7 @@ function ProcessSteps() {
               key={pill}
               className={`rounded-full px-5 py-3 text-xs font-extrabold uppercase ${index === 0
                 ? 'bg-[#0a66c2] text-white shadow-[0_14px_34px_rgba(10,102,194,0.28)]'
-                : 'bg-white/75 text-[var(--muted-text)] shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
+                : 'border border-[var(--soft-border)] bg-[var(--soft-surface-strong)] text-[var(--page-text)] shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
                 }`}
             >
               {pill}
@@ -53,12 +53,12 @@ function ProcessSteps() {
           {STEPS.map((step) => (
             <article
               key={step.num}
-              className="group relative overflow-hidden rounded-[34px] bg-white/82 p-5 shadow-[0_24px_70px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-1"
+              className="soft-surface-strong group relative overflow-hidden rounded-[34px] p-5 transition-all duration-300 hover:-translate-y-1"
             >
               <div className="absolute inset-x-5 top-0 h-1 rounded-b-full bg-[#0a66c2]" />
 
               <div className="flex items-start justify-between gap-4">
-                <span className="font-sans text-6xl font-black italic leading-none text-[#0a66c2]/15">
+                <span className="font-sans text-6xl font-black italic leading-none text-[#0a66c2]/25">
                   {step.num}
                 </span>
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#0a66c2] text-white shadow-[0_12px_28px_rgba(10,102,194,0.28)]">
@@ -66,7 +66,7 @@ function ProcessSteps() {
                 </span>
               </div>
 
-              <h4 className="mt-8 text-xl font-black uppercase italic leading-tight text-[#101827]">
+              <h4 className="mt-8 font-sans text-xl font-extrabold leading-tight text-[var(--page-text)]">
                 {step.title}
               </h4>
 

@@ -158,7 +158,9 @@
   }
 
   .eyebrow {
-    @apply text-xs font-extrabold uppercase;
+    @apply inline-flex rounded-full border px-4 py-2 text-xs font-extrabold uppercase;
+    border-color: color-mix(in srgb, var(--accent) 42%, transparent);
+    background: var(--accent-soft);
     color: var(--accent);
     letter-spacing: 0;
   }

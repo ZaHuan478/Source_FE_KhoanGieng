@@ -69,7 +69,7 @@ function Header({ scrolled, navItems, logo }) {
         <div className="flex items-center gap-2">
           <div className="hidden h-11 w-72 items-center gap-3 rounded-[13px] border border-[var(--soft-border)] bg-[var(--soft-surface)] px-4 text-sm text-[var(--muted-text)] xl:flex">
             <Search className="h-4 w-4" />
-            <span>Tim dich vu...</span>
+            <span>Tìm dịch vụ...</span>
           </div>
           <button
             type="button"

@@ -21,7 +21,7 @@ function ServicesDetail({ detailRef }) {
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[1fr_340px]">
           <div className="soft-surface rounded-[24px] p-5 sm:p-6">
             <p className="inline-flex rounded-full bg-[var(--accent-soft)] px-4 py-2 text-xs font-extrabold uppercase text-[var(--accent)]">Chi tiết dịch vụ</p>
-            <h2 className="mb-6 font-display text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold italic leading-none text-[var(--page-text)]">
+            <h2 className="mb-6 font-display text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold leading-none text-[var(--page-text)]">
               Dịch vụ khoan giếng
             </h2>
             <div className="flex flex-col gap-5">

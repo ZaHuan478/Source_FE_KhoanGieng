@@ -23,8 +23,8 @@ const proofPoints = [
 function WhyChooseUsSection({ whyPoints, video }) {
   return (
     <section id="gioi-thieu" className="ambient-section py-14">
-      <div className="mx-auto grid w-full max-w-300 gap-7 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-        <div className="soft-surface overflow-hidden rounded-[22px] p-3">
+      <div className="mx-auto grid w-full max-w-300 gap-7 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-8">
+        <div className="soft-surface self-start overflow-hidden rounded-[22px] p-3">
           <div className="relative overflow-hidden rounded-lg bg-slate-950">
             {video?.url ? (
               <video
@@ -62,21 +62,22 @@ function WhyChooseUsSection({ whyPoints, video }) {
             <p>{whyPoints[0]}</p>
           </div>
 
-          <div className="mt-5 grid gap-3">
-            {proofPoints.map((point) => (
-              <div key={point.title} className="soft-surface rounded-[18px] p-4">
-                <div className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[var(--nav-active)] text-[var(--nav-active-text)]">
-                    {createElement(point.icon, { className: 'h-5 w-5' })}
-                  </span>
-                  <div>
-                    <h3 className="font-sans text-base font-extrabold text-[var(--page-text)]">{point.title}</h3>
-                    <p className="mt-1 text-sm leading-6 text-[var(--muted-text)]">{point.description}</p>
-                  </div>
+        </div>
+
+        <div className="grid gap-4 lg:col-span-2 lg:grid-cols-3">
+          {proofPoints.map((point) => (
+            <div key={point.title} className="soft-surface rounded-[18px] p-4">
+              <div className="flex gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[var(--nav-active)] text-[var(--nav-active-text)]">
+                  {createElement(point.icon, { className: 'h-5 w-5' })}
+                </span>
+                <div>
+                  <h3 className="font-sans text-base font-extrabold text-[var(--page-text)]">{point.title}</h3>
+                  <p className="mt-1 text-sm leading-6 text-[var(--muted-text)]">{point.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
