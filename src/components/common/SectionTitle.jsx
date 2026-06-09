@@ -5,7 +5,7 @@ function SectionTitle({ title, subtitle, align = 'center', invert = false, eyebr
         <p className="eyebrow mb-3">{eyebrow}</p>
       ) : null}
       <h2
-        className={`font-display text-4xl font-extrabold italic leading-[0.98] sm:text-5xl ${
+        className={`font-display text-4xl font-extrabold leading-[0.98] sm:text-5xl ${
           invert ? 'text-white' : 'text-[var(--page-text)]'
         }`}
       >

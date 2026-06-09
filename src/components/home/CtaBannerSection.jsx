@@ -8,7 +8,7 @@ function CtaBannerSection() {
         <div className="soft-surface grid gap-8 rounded-[24px] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="eyebrow">Báo giá minh bạch</p>
-            <h2 className="mt-3 max-w-3xl font-display text-4xl font-extrabold italic leading-none text-[var(--page-text)] sm:text-6xl">
+            <h2 className="mt-3 max-w-3xl font-display text-4xl font-extrabold leading-none text-[var(--page-text)] sm:text-6xl">
               Chi phí rõ theo độ sâu, địa chất và cấu hình bơm.
             </h2>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--muted-text)] sm:text-base">

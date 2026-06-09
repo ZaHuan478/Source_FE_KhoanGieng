@@ -43,9 +43,6 @@ function WhyChooseUsSection({ whyPoints, video }) {
             )}
             <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/82 to-transparent p-5">
               <p className="text-sm font-bold text-white/78">Công trình thực tế</p>
-              <p className="mt-1 font-display text-3xl font-extrabold italic text-white">
-                Thi công tại hiện trường
-              </p>
             </div>
           </div>
         </div>

@@ -74,7 +74,7 @@ function ServicesSection({ mediaImages = {} }) {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/18 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
               <p className="eyebrow text-sky-200">Hạng mục 0{activeIndex + 1}</p>
-              <h3 className="mt-3 max-w-xl font-display text-4xl font-extrabold italic leading-none text-white sm:text-5xl">
+              <h3 className="mt-3 max-w-xl font-display text-4xl font-extrabold leading-none text-white sm:text-5xl">
                 {activeTile?.title}
               </h3>
               <p className="mt-4 max-w-xl text-sm font-medium leading-7 text-white/78 sm:text-base">

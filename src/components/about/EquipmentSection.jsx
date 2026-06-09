@@ -77,7 +77,7 @@ function EquipmentSection({ equipmentItems }) {
                                     <p className="text-xs font-extrabold uppercase text-sky-200">
                                         Thiết bị chủ lực
                                     </p>
-                                    <h4 className="mt-2 max-w-sm text-2xl font-black uppercase italic leading-tight">
+                                    <h4 className="mt-2 max-w-sm text-2xl font-black uppercase  leading-tight">
                                         {item.name}
                                     </h4>
                                 </div>
