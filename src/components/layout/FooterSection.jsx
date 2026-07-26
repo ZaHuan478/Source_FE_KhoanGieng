@@ -76,9 +76,9 @@ function FooterSection() {
           </div>
         </div>
 
-        <div className="lg:ml-8">
+        {/* <div className="lg:ml-8">
           <h5 className="inline-flex rounded-full border border-[var(--soft-border)] bg-[var(--accent-soft)] px-4 py-2 text-xs font-extrabold uppercase text-[var(--accent)]">
-            Dịch vụ chính
+            Dịch
           </h5>
           <ul className="mt-4 space-y-3 text-sm text-[var(--muted-text)]">
             {fallbackFooterServices.map((service) => (
@@ -87,7 +87,7 @@ function FooterSection() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div className="soft-surface overflow-hidden rounded-[22px] p-2">
           <iframe

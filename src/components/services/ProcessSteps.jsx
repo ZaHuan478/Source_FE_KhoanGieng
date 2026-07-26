@@ -31,9 +31,9 @@ function ProcessSteps() {
           </div>
         </div>
 
-        <p className="mt-5 max-w-2xl text-sm font-semibold leading-7 text-[var(--muted-text)]">
+        {/* <p className="mt-5 max-w-2xl text-sm font-semibold leading-7 text-[var(--muted-text)]">
           Mỗi công trình được theo dõi theo từng bước để tối ưu chi phí và đảm bảo an toàn nguồn nước.
-        </p>
+        </p> */}
 
         <div className="mt-8 flex flex-wrap gap-3">
           {processPills.map((pill, index) => (

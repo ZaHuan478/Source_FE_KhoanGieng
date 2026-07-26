@@ -35,9 +35,9 @@ export const services = [
 export const whyPoints = [
   <>
     Với <strong className="font-semibold text-sky-200">nhiều năm kinh nghiệm</strong> trong lĩnh vực
-    khoan giếng, Trường Giang cung cấp giải pháp nguồn nước sạch ổn định cho gia đình, nông trại
-    và công trình sản xuất. Đội ngũ kỹ thuật thi công bằng máy móc chuyên dụng, khảo sát kỹ trước
-    khi khoan và bàn giao rõ ràng từng hạng mục.
+    khoan giếng, Công ty Trường Giang cung cấp giải pháp nguồn nước ổn định cho hộ gia đình, trang trại
+    và công trình đang thi công. Đội ngũ nhân công kỹ thuật thi công với tinh thần trách nhiệm cao, áp dụng máy móc chuyên dụng
+    cho mỗi địa hình thi công phù hợp.
   </>,
 ]
 

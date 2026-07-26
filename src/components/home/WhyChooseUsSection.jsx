@@ -51,8 +51,8 @@ function WhyChooseUsSection({ whyPoints, video }) {
           <SectionTitle
             align="left"
             eyebrow="Vì sao chọn chúng tôi"
-            title="Kỹ thuật chắc, báo giá rõ, vận hành bền."
-            subtitle="Không chỉ khoan xong là kết thúc, đội ngũ còn tư vấn hệ thống bơm và cách khai thác để giếng hoạt động ổn định."
+            title="Kỹ thuật hoàn hảo, báo giá rõ ràng, thi công chất lượng."
+            // subtitle="Không chỉ khoan xong là kết thúc, đội ngũ còn tư vấn hệ thống bơm và cách khai thác để giếng hoạt động ổn định."
           />
 
           <div className="soft-surface mt-6 rounded-[18px] p-5 text-base leading-8 text-[var(--muted-text)]">
@@ -61,7 +61,7 @@ function WhyChooseUsSection({ whyPoints, video }) {
 
         </div>
 
-        <div className="grid gap-4 lg:col-span-2 lg:grid-cols-3">
+        {/* <div className="grid gap-4 lg:col-span-2 lg:grid-cols-3">
           {proofPoints.map((point) => (
             <div key={point.title} className="soft-surface rounded-[18px] p-4">
               <div className="flex gap-4">
@@ -75,7 +75,7 @@ function WhyChooseUsSection({ whyPoints, video }) {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

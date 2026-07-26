@@ -32,7 +32,7 @@ function HomePage() {
         <ServicesSection services={services} mediaImages={media.images} />
         <WhyChooseUsSection whyPoints={whyPoints} video={media.videos.whyVideo} />
         <FeatureHighlightsSection />
-        <CtaBannerSection />
+        {/* <CtaBannerSection /> */}
       </main>
       <FooterSection footerServices={footerServices} />
     </div>

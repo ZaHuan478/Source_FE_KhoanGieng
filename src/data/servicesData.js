@@ -1,66 +1,63 @@
 export const DRILL_ITEMS = [
   {
-    name: 'Khoan giếng phi 48 (Hộ gia đình nhỏ)',
-    details: ['Độ sâu 25 – 40m', 'Ống PVC chuẩn, lọc cát sỏi thạch anh', 'Bảo hành công trình 2 năm'],
-    note: 'Phù hợp vùng nước nông, địa tầng mềm.',
+    name: 'Khoan giếng vùng địa tầng cát',
+    details: ['Khoan tay','Khoan máy thủ công'],
+    // note: 'Phù hợp vùng nước nông, địa tầng mềm.',
   },
   {
-    name: 'Khoan giếng phi 60 (Tiêu chuẩn)',
-    details: ['Độ sâu đến 60m', 'Ống dày chịu áp lực cao', 'Hỗ trợ lắp đặt máy bơm', 'Bảo hành 5 năm'],
+    name: 'Khoan giếng vùng địa tầng đất đá',
+    details: ['Độ sâu khoan từ 200-300m'],
     note: 'Phù hợp hầu hết hộ gia đình và cơ sở sản xuất nhỏ.',
   },
-  {
-    name: 'Khoan giếng công nghiệp',
-    details: ['Độ sâu 60m trở lên', 'Thiết kế theo yêu cầu kỹ thuật', 'Đầy đủ hồ sơ pháp lý'],
-    note: 'Khảo sát thực địa trước khi báo giá chính xác.',
-  },
+  // {
+  //   name: 'Khoan giếng công nghiệp',
+  //   details: ['Độ sâu 60m trở lên', 'Thiết kế theo yêu cầu kỹ thuật', 'Đầy đủ hồ sơ pháp lý'],
+  //   note: 'Khảo sát thực địa trước khi báo giá chính xác.',
+  // },
 ]
 
 export const MATERIAL_ITEMS = [
   {
-    name: 'Ống chống nhựa PVC',
+    name: 'Ống chống cho giếng vùng địa chất tầng cát',
     details: [
-      'Ống chống PVC dk 168mm, dày 3,5mm — 170.000đ/mét',
-      'Ống chống PVC dk 114mm, dày 3,5mm — 120.000đ/mét',
+      'Ống nhực PVC chống vách giếng đường kính 90mm.',
+      'Ống nhựa PVC chống vách giếng đường kính 114mm.',
     ],
     note: 'Chống sạt lở thành giếng, đảm bảo bền vững theo công trình.',
   },
   {
-    name: 'Ống dẫn nước từ bơm lên miệng giếng',
+    name: 'Ống chống cho giếng vùng địa chất đất đá',
     details: [
-      'Ống PVC dk 34mm — 24.000đ/mét',
-      'Ống PVC dk 42mm — 28.000đ/mét',
+      'Ống nhựa PVC chống vách giếng đường kính 168mm — lắp đặt từ mặt đất hiện hữu đến đá tảng',
+      'Ống nhựa PVC chống vách giếng đường kính 114mm — lắp đặt từ đáy lên mặt đất hiện hữu',
     ],
-    note: 'Chịu áp lực tốt, không nhiễm kim loại nặng vào nước.',
   },
   {
-    name: 'Dây điện & cáp treo bơm',
+    name: 'Máy bơm, dây điện & cáp treo bơm',
     details: [
-      'Dây điện 3x4 — 44.000đ/mét',
-      'Dây cáp treo bơm inox — 35.000đ/mét',
+      'Máy bơm loại Hỏa Tiễn',
+      'Tùy vào độ sâu giếng khoan chọn máy bơm phù hợp công suất và lưu lượng khai thác',
+      'Dây điện 3x4 hoặc 3x6 — tùy theo công suất máy bơm',
+      'Dây cáp treo bơm bằng inox',
     ],
-    note: 'Cáp inox chịu lực cao, không gỉ theo thời gian dưới nước.',
   },
   {
-    name: 'Thiết bị điện & phụ kiện',
+    name: 'Thiết bị & phụ kiện',
     details: [
-      'CB (Aptomat) 20A — 134.000đ/cái',
-      'Tủ điện vận hành máy bơm — 3.000.000đ/cái',
-      'Nối thẳng ren trong dk 34mm — 8.000đ/cái',
-      'Nối thẳng ren ngoài dk 34mm — 8.000đ/cái',
-      'Phụ kiện lắp đặt, keo dán ống chống... — 500.000đ/giếng',
+      'Tủ điện điều khiển máy bơm',
+      'Ốc siết cáp bằng inox',
+      'Keo dán ống PVC',
     ],
-    note: 'Toàn bộ vật tư điện đạt tiêu chuẩn an toàn điện Việt Nam.',
   },
-  {
-    name: 'Máy bơm chìm (chọn theo công suất thực tế)',
-    details: [
-      'Lựa chọn sau khi đo lưu lượng thực tế tại giếng',
-      'Thương hiệu: Pentax, Ebara, Lepono',
-      'Công suất từ 0,37kW đến 2,2kW tùy độ sâu',
-    ],
-    note: 'Tư vấn miễn phí — chọn đúng máy tiết kiệm điện tối đa.',
-  },
+  // {
+  //   name: 'Máy bơm chìm (chọn theo công suất thực tế)',
+  //   details: [
+  //     'Lựa chọn sau khi đo lưu lượng thực tế tại giếng',
+  //     'Thương hiệu: Pentax, Ebara, Lepono',
+  //     'Công suất từ 0,37kW đến 2,2kW tùy độ sâu',
+  //   ],
+  //   note: 'Tư vấn miễn phí — chọn đúng máy tiết kiệm điện tối đa.',
+  // },
 ]
 
 export const PUMP_ITEMS = [
@@ -92,6 +89,6 @@ export const ELECTRIC_ITEMS = [
 export const STEPS = [
   { num: '01', title: 'Khảo sát địa tầng', desc: 'Đánh giá địa chất và vị trí khoan phù hợp' },
   { num: '02', title: 'Khoan tạo lỗ', desc: 'Triển khai đúng kỹ thuật, hạn chế ảnh hưởng xung quanh' },
-  { num: '03', title: 'Lắp ống – Chống cát', desc: 'Gia cố thành giếng, bảo vệ nguồn nước lâu dài' },
+  { num: '03', title: 'Lắp đặt thiết bị giếng khoan', desc: 'Gia cố thành giếng, bảo vệ nguồn nước lâu dài' },
   { num: '04', title: 'Nghiệm thu – Bàn giao', desc: 'Kiểm tra lưu lượng và hướng dẫn vận hành chi tiết' },
 ]

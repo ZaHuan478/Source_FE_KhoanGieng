@@ -8,10 +8,10 @@ import {
 } from '../../data/servicesData'
 
 const TRUST_ITEMS = [
-  { icon: ShieldCheck, text: 'Bảo hành công trình lên đến 5 năm' },
+  // { icon: ShieldCheck, text: 'Bảo hành công trình lên đến 5 năm' },
   { icon: Clock, text: 'Thi công đúng tiến độ cam kết' },
   { icon: Wrench, text: 'Vật tư chính hãng, đạt chuẩn kỹ thuật' },
-  { icon: Star, text: 'Đội ngũ thợ lành nghề, kinh nghiệm cao' },
+  { icon: Star, text: 'Đội ngũ công nhân, kỹ thuật lành nghề, kinh nghiệm cao' },
 ]
 
 function ServicesDetail({ detailRef }) {
@@ -27,8 +27,8 @@ function ServicesDetail({ detailRef }) {
             <div className="flex flex-col gap-5">
               <ServiceAccordion title="Khoan giếng" items={DRILL_ITEMS} />
               <ServiceAccordion title="Vật tư lắp đặt giếng khoan" items={MATERIAL_ITEMS} />
-              <ServiceAccordion title="Lắp đặt máy bơm" items={PUMP_ITEMS} />
-              <ServiceAccordion title="Hệ thống điện" items={ELECTRIC_ITEMS} />
+              {/* <ServiceAccordion title="Lắp đặt máy bơm" items={PUMP_ITEMS} /> */}
+              {/* <ServiceAccordion title="Hệ thống điện" items={ELECTRIC_ITEMS} /> */}
             </div>
           </div>
 
@@ -54,7 +54,7 @@ function ServicesDetail({ detailRef }) {
             </div>
 
             <div className="soft-surface rounded-[24px] p-5">
-              <p className="mb-1 text-[0.9rem] font-extrabold text-[var(--page-text)]">Liên hệ tư vấn miễn phí</p>
+              <p className="mb-1 text-[0.9rem] font-extrabold text-[var(--page-text)]">Liên hệ tư vấn 24/7</p>
               <p className="mb-4 text-[0.8rem] leading-6 text-[var(--muted-text)]">
                 Gọi hoặc nhắn Zalo, đội ngũ sẽ phản hồi và tư vấn phương án phù hợp.
               </p>

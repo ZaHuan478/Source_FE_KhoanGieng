@@ -19,9 +19,8 @@ function ServicesSection({ mediaImages = {} }) {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionTitle
             align="left"
-            eyebrow="Dịch vụ trọng tâm"
-            title="Tìm đúng mạch nước trước khi bắt đầu khoan."
-            subtitle="Trường Giang kết hợp khảo sát thực địa, máy khoan chuyên dụng và quy trình bàn giao rõ ràng để nguồn nước khai thác ổn định lâu dài."
+            eyebrow="Dịch vụ khảo sát mạch nước ngầm"
+            title="Quy trình thực hiện một giếng khoan"
           />
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -82,7 +81,7 @@ function ServicesSection({ mediaImages = {} }) {
               </p>
             </div>
           </div>
-
+{/* 
           <div className="mt-3 grid gap-3 sm:grid-cols-3">
             {featureTiles.slice(0, 3).map((tile, index) => (
               <button
@@ -98,7 +97,7 @@ function ServicesSection({ mediaImages = {} }) {
                 <ChevronRight className="accent-text ml-auto h-4 w-4 shrink-0 transition group-hover:translate-x-0.5" />
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

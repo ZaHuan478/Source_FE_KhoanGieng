@@ -5,10 +5,10 @@ function AboutHero({ image }) {
         <section className="relative overflow-hidden px-4 pb-12 pt-32 text-center sm:px-6 lg:px-8">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(10,102,194,0.18),transparent_21rem),radial-gradient(circle_at_80%_74%,rgba(59,130,246,0.14),transparent_24rem)]" />
             <div className="relative mx-auto flex min-h-[460px] max-w-6xl flex-col items-center justify-center">
-                <span className="soft-surface inline-flex h-8 items-center gap-2 rounded-full px-4 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[var(--muted-text)]">
+                {/* <span className="soft-surface inline-flex h-8 items-center gap-2 rounded-full px-4 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[var(--muted-text)]">
                     <Compass className="h-3.5 w-3.5 accent-text" />
                     About Truong Giang
-                </span>
+                </span> */}
 
                 <h1 className="mt-7 text-balance font-display text-[clamp(3rem,7vw,6.6rem)] font-extrabold uppercase leading-[0.9] text-[var(--page-text)]">
                     Kiến tạo

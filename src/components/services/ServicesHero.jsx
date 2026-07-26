@@ -13,18 +13,18 @@ function ServicesHero({ scrollToDetail, image }) {
       ) : null} */}
 
       <div className="relative mx-auto flex min-h-[440px] max-w-5xl flex-col items-center justify-center">
-        <span className="soft-surface inline-flex h-8 items-center gap-2 rounded-full px-4 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[var(--muted-text)]">
+        {/* <span className="soft-surface inline-flex h-8 items-center gap-2 rounded-full px-4 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[var(--muted-text)]">
           <Drill className="h-3.5 w-3.5 accent-text" />
           Service System
-        </span>
+        </span> */}
         <h1 className="mt-7 text-balance font-display text-[clamp(3rem,7vw,6.4rem)] font-extrabold uppercase leading-[0.9] text-[var(--page-text)]">
           Giải pháp
           <span className="accent-text block italic normal-case">nguồn nước</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-8 text-[var(--muted-text)]">
+        {/* <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-8 text-[var(--muted-text)]">
           Từ khảo sát địa tầng, khoan giếng đến lắp đặt hệ thống bơm và điện hoàn chỉnh,
           chúng tôi cung cấp một quy trình rõ ràng cho từng công trình.
-        </p>
+        </p> */}
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <button
             onClick={scrollToDetail}
